@@ -1,0 +1,1 @@
+export { computeCountedDelay } from './delay';

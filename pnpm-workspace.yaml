@@ -1,0 +1,9 @@
+packages:
+  - apps/*
+  - packages/*
+
+# React Native / Metro résolvent plus fiablement avec un node_modules à plat
+nodeLinker: hoisted
+
+allowBuilds:
+  esbuild: true

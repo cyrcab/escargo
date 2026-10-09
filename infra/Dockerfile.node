@@ -1,0 +1,15 @@
+# Image commune api / worker. Build : docker build -f infra/Dockerfile.node --build-arg APP=api .
+FROM node:24-alpine AS build
+ARG APP
+RUN corepack enable
+WORKDIR /repo
+COPY . .
+RUN pnpm install --frozen-lockfile --filter "@escargo/${APP}..." && pnpm --filter "@escargo/${APP}" build
+
+FROM node:24-alpine
+ARG APP
+WORKDIR /app
+COPY --from=build /repo/node_modules ./node_modules
+COPY --from=build /repo/apps/${APP}/dist ./dist
+USER node
+CMD ["sh", "-c", "node dist/*.js"]
