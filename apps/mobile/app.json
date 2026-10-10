@@ -9,7 +9,7 @@
     "userInterfaceStyle": "light",
     "ios": {
       "icon": "./assets/expo.icon",
-      "bundleIdentifier": "app.escargo"
+      "bundleIdentifier": "fr.cyril-cabrolier.escargo"
     },
     "android": {
       "adaptiveIcon": {
@@ -19,7 +19,7 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false,
-      "package": "app.escargo"
+      "package": "fr.cyril_cabrolier.escargo"
     },
     "web": {
       "output": "static",
