@@ -30,7 +30,9 @@ export async function pollRealtime({ redis, url }: RealtimePollOptions) {
   if (!feed.timestamp) throw new Error('GTFS-RT SNCF : flux sans horodatage');
 
   const lastTimestamp = Number(await redis.hget(FEED_KEY, 'timestamp'));
-  if (feed.timestamp <= lastTimestamp) {
+  // Égalité seulement : si le fournisseur repart en arrière, on continue à lire le flux
+  // (la fusion par train ignore déjà les lectures plus anciennes que le cache).
+  if (feed.timestamp === lastTimestamp) {
     console.log('[rt] flux inchangé');
     return;
   }
