@@ -11,10 +11,11 @@
     "test": "vitest run --passWithNoTests"
   },
   "dependencies": {
-    "@escargo/shared": "workspace:*"
+    "@escargo/shared": "workspace:*",
+    "gtfs-realtime-bindings": "2.2.0"
   },
   "devDependencies": {
-    "vitest": "5.0.3",
-    "@types/node": "26.6.4"
+    "@types/node": "26.6.4",
+    "vitest": "5.0.3"
   }
 }
