@@ -50,7 +50,7 @@ export async function isGtfsStale(db: Db, now = new Date()): Promise<boolean> {
  */
 export async function importGtfs({ db, url, dataDir }: GtfsImportOptions) {
   const started = Date.now();
-  const response = await fetch(url);
+  const response = await fetch(url, { signal: AbortSignal.timeout(5 * 60_000) });
   if (!response.ok) throw new Error(`GTFS SNCF : HTTP ${response.status}`);
   const zip = new Uint8Array(await response.arrayBuffer());
   await mkdir(dataDir, { recursive: true });

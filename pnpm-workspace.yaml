@@ -7,3 +7,4 @@ nodeLinker: hoisted
 
 allowBuilds:
   esbuild: true
+  protobufjs: false

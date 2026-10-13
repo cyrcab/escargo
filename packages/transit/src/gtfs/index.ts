@@ -24,4 +24,4 @@ export {
   toTrip,
   trainNumberFromTripId,
 } from './parse';
-export { formatGtfsTime, parseGtfsTime } from './time';
+export { formatGtfsTime, parseGtfsTime, serviceDaySeconds } from './time';
