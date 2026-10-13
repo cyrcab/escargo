@@ -1,0 +1,5 @@
+route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_url,route_color,route_text_color
+FR:Line::02534A5F-903C-454E-A24F-E6E2E23B3CBF:,1187,P13,Ambérieu - Mâcon,,2,,006600,FFFFFF
+FR:Line::18B0FAF0-44B1-4D0A-A8AD-2E32B7602EAD:,1187,401D,Paris - Rennes - Saint-Malo - Saint-Brieuc TGV,,2,,,
+FR:Line::53865649-1C74-4657-9123-DA7EDE71D3DB:,1187,C16,Colomiers - St Cyprien Arenes,,2,,0749FF,FFFFFF
+FR:Line::DDEF5935-0332-4ED5-B499-5C664AF7CF05:,1187,C6,Toulouse Matabiau - Auch,,2,,0749FF,FFFFFF
