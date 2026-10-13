@@ -3,25 +3,18 @@ name: Claude Code Review
 on:
   pull_request:
     types: [opened, synchronize, ready_for_review, reopened]
-    # Optional: Only run on specific file changes
-    # paths:
-    #   - "src/**/*.ts"
-    #   - "src/**/*.tsx"
-    #   - "src/**/*.js"
-    #   - "src/**/*.jsx"
+
+concurrency:
+  group: claude-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
 
 jobs:
   claude-review:
-    # Optional: Filter by PR author
-    # if: |
-    #   github.event.pull_request.user.login == 'external-contributor' ||
-    #   github.event.pull_request.user.login == 'new-developer' ||
-    #   github.event.pull_request.author_association == 'FIRST_TIME_CONTRIBUTOR'
-
+    if: github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      pull-requests: read
+      pull-requests: write
       issues: read
       id-token: write
 
@@ -36,10 +29,27 @@ jobs:
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          plugin_marketplaces: 'https://github.com/anthropics/claude-code.git'
-          plugins: 'code-review@claude-code-plugins'
-          prompt: '/code-review:code-review --comment ${{ github.repository }}/pull/${{ github.event.pull_request.number }}'
-          claude_args: '--allowedTools "mcp__github_inline_comment__create_inline_comment"'
-          # See https://github.com/anthropics/claude-code-action/blob/main/docs/usage.md
-          # or https://code.claude.com/docs/en/cli-reference for available options
+          prompt: |
+            REPO: ${{ github.repository }}
+            PR NUMBER: ${{ github.event.pull_request.number }}
 
+            Relis cette pull request. Lis d'abord `CLAUDE.md` à la racine et le `CLAUDE.md` du dossier
+            de chaque fichier modifié : leurs règles sont le référentiel de la review.
+
+            1. `gh pr view` pour le contexte, `gh pr diff` pour les changements. Ouvre les fichiers
+               modifiés pour comprendre le code autour du diff.
+            2. Cherche en priorité :
+               - les bugs et cas limites (erreurs non gérées, valeurs nulles, fuseaux horaires, heures GTFS > 24 h) ;
+               - les violations des règles non négociables de `CLAUDE.md` : coordonnées GPS envoyées
+                 au serveur, gares dans les classements, données sensibles dans les logs, marques SNCF/IDFM,
+                 couleurs en dur hors `@escargo/design-tokens`, migration écrite à la main ;
+               - la logique métier hors `packages/*` ou sans test.
+            3. Signale chaque problème réel avec `mcp__github_inline_comment__create_inline_comment`
+               sur la ligne concernée : le problème, pourquoi, la correction. Pas de remarque de style
+               que Biome gère déjà, pas de compliment.
+            4. Termine par un seul commentaire de synthèse avec `gh pr comment` : verdict
+               (« OK pour fusionner » ou « À corriger »), liste courte des points bloquants.
+
+            Réponds en français, de façon concise.
+          claude_args: |
+            --allowedTools "mcp__github_inline_comment__create_inline_comment,Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*),Read,Grep,Glob"
