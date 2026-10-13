@@ -77,7 +77,7 @@ Titre spécial de ligne pour le top 10 (« Roi du RER B »).
 
 L'ancienne API temps réel Transilien est fermée. Le flux national SNCF ne garantit que TGV et Intercités ; TER en partie, à compléter par les flux régionaux.
 
-**Calcul du retard** : arrivée réelle à la gare de descente − arrivée prévue GTFS ; compté à partir de 5 min ; train supprimé = écart avec l'arrivée réelle du train suivant pris ; backend avec cache par train, coût indépendant du nombre d'utilisateurs.
+**Calcul du retard** : arrivée réelle à la gare de descente − arrivée prévue GTFS ; compté à partir de 5 min ; chaque train compte séparément, une correspondance ratée n'ajoute rien (voir `docs/adr/0002-retard-par-train.md`) ; train supprimé = écart avec l'arrivée réelle du train suivant pris ; backend avec cache par train, coût indépendant du nombre d'utilisateurs.
 
 ## Architecture
 
