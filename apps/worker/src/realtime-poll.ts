@@ -13,7 +13,8 @@ export interface RealtimePollOptions {
  * Ne fait rien si le flux n'a pas changé depuis le dernier relevé.
  */
 export async function pollRealtime({ redis, url }: RealtimePollOptions) {
-  const response = await fetch(url);
+  // Sans timeout, un flux bloqué garderait le verrou du poll pour toujours.
+  const response = await fetch(url, { signal: AbortSignal.timeout(30_000) });
   if (!response.ok) throw new Error(`GTFS-RT SNCF : HTTP ${response.status}`);
   const feed = decodeTripUpdates(new Uint8Array(await response.arrayBuffer()));
 
@@ -29,7 +30,7 @@ export async function pollRealtime({ redis, url }: RealtimePollOptions) {
   const write = redis.pipeline();
   const dates = new Set<string>();
   feed.trips.forEach((trip, i) => {
-    const previous = cached[i] ? (JSON.parse(cached[i]) as TripRealtime) : null;
+    const previous = parseCached(cached[i]);
     const merged = mergeTripRealtime(previous, trip);
     write.set(
       tripKey(trip.serviceDate, trip.tripId),
@@ -58,4 +59,14 @@ export async function pollRealtime({ redis, url }: RealtimePollOptions) {
   if (failed) throw failed[0];
 
   console.log(`[rt] ${feed.trips.length} trains en cache, dont ${cancelled} supprimés`);
+}
+
+/** Une entrée illisible (forme changée après un déploiement) est simplement réécrite. */
+function parseCached(value: string | null | undefined): TripRealtime | null {
+  if (!value) return null;
+  try {
+    return JSON.parse(value) as TripRealtime;
+  } catch {
+    return null;
+  }
 }
