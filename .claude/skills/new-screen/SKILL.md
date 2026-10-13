@@ -4,7 +4,7 @@ description: Crée un écran Expo Router conforme au design system Escargo (toke
 argument-hint: <nom de l'écran> [route]
 ---
 
-Crée l'écran « $ARGUMENTS » dans `apps/mobile` avec l'agent `mobile-dev`.
+Crée l'écran « $ARGUMENTS » dans `apps/mobile` (règles dans `apps/mobile/CLAUDE.md`).
 
 Checklist :
 - Route dans `src/app/` (onglet dans `(tabs)/` si besoin), logique dans `src/features/<domaine>/`, composants réutilisables dans `src/ui/`.

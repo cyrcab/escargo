@@ -4,7 +4,7 @@ description: Ajoute une route Fastify avec schéma Zod partagé et test. Utilise
 argument-hint: <MÉTHODE> <chemin> <description>
 ---
 
-Ajoute l'endpoint « $ARGUMENTS » avec l'agent `backend-dev`.
+Ajoute l'endpoint « $ARGUMENTS » (règles dans `apps/api/CLAUDE.md`).
 
 1. Schémas d'entrée et de sortie dans `packages/shared/src/` (exportés depuis l'index), réutilisables par l'appli.
 2. Route dans `apps/api/src/routes/<domaine>.ts` (plugin Fastify), enregistrée dans `src/app.ts`.

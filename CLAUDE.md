@@ -45,6 +45,7 @@ Mobile : toujours `npx expo install <pkg>` dans `apps/mobile`, jamais `pnpm add`
 
 1. Une issue GitHub par tâche, milestone = phase du planning.
 2. `/feature <n° issue>` : branche, plan, implémentation, tests, PR.
+   Une fonctionnalité = un seul contexte qui code tout (packages, API, appli). Les agents spécialisés servent de consultants ou pour des sous-tâches isolées, jamais pour découper une fonctionnalité par techno.
 3. Pour des tâches parallèles : `claude --worktree <nom>`.
 4. Avant PR : `pnpm typecheck && pnpm test`, puis `/code-review`. Agents `privacy-reviewer` ou `design-reviewer` si la PR touche données ou UI.
 5. Commits en Conventional Commits (`feat(mobile): …`), en anglais.
