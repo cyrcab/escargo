@@ -1,6 +1,14 @@
-import { decodeTripUpdates, mergeTripRealtime, type TripRealtime } from '@escargo/transit';
+import {
+  decodeTripUpdates,
+  FEED_KEY,
+  mergeTripRealtime,
+  pollsKey,
+  seenKey,
+  TRIP_TTL_SECONDS,
+  type TripRealtime,
+  tripKey,
+} from '@escargo/transit';
 import type { Redis } from 'ioredis';
-import { FEED_KEY, pollsKey, seenKey, TRIP_TTL_SECONDS, tripKey } from './realtime-keys';
 
 export interface RealtimePollOptions {
   redis: Redis;
@@ -17,6 +25,9 @@ export async function pollRealtime({ redis, url }: RealtimePollOptions) {
   const response = await fetch(url, { signal: AbortSignal.timeout(30_000) });
   if (!response.ok) throw new Error(`GTFS-RT SNCF : HTTP ${response.status}`);
   const feed = decodeTripUpdates(new Uint8Array(await response.arrayBuffer()));
+
+  // Sans horodatage, impossible de savoir si le flux a changé : mieux vaut une erreur visible.
+  if (!feed.timestamp) throw new Error('GTFS-RT SNCF : flux sans horodatage');
 
   const lastTimestamp = Number(await redis.hget(FEED_KEY, 'timestamp'));
   if (feed.timestamp <= lastTimestamp) {

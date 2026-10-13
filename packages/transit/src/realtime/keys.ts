@@ -1,4 +1,4 @@
-// Clés Redis du cache temps réel, partagées par le worker et l'API.
+// Clés Redis du cache temps réel : écrites par le worker, lues par l'API.
 
 /** Dernier état connu d'un train : JSON `TripRealtime`. */
 export const tripKey = (serviceDate: string, tripId: string) => `rt:trip:${serviceDate}:${tripId}`;
