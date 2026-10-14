@@ -1,5 +1,5 @@
 {
-  "id": "f6288bcd-0d39-4163-9d05-0470a6d64ca5",
+  "id": "59a16dc7-5671-4fa6-a9c0-5f9af6e6c5fa",
   "prevId": "a5ab744c-d259-473f-afb1-dd74271af332",
   "version": "7",
   "dialect": "postgresql",
@@ -20,7 +20,8 @@
           "type": "gtfs_feed",
           "typeSchema": "public",
           "primaryKey": false,
-          "notNull": true
+          "notNull": true,
+          "default": "'SNCF'"
         },
         "source": {
           "name": "source",
@@ -107,18 +108,19 @@
       "name": "gtfs_routes",
       "schema": "",
       "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
         "feed": {
           "name": "feed",
           "type": "gtfs_feed",
           "typeSchema": "public",
           "primaryKey": false,
-          "notNull": true
-        },
-        "id": {
-          "name": "id",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": true
+          "notNull": true,
+          "default": "'SNCF'"
         },
         "short_name": {
           "name": "short_name",
@@ -135,15 +137,7 @@
       },
       "indexes": {},
       "foreignKeys": {},
-      "compositePrimaryKeys": {
-        "gtfs_routes_feed_id_pk": {
-          "name": "gtfs_routes_feed_id_pk",
-          "columns": [
-            "feed",
-            "id"
-          ]
-        }
-      },
+      "compositePrimaryKeys": {},
       "uniqueConstraints": {},
       "policies": {},
       "checkConstraints": {},
@@ -158,7 +152,8 @@
           "type": "gtfs_feed",
           "typeSchema": "public",
           "primaryKey": false,
-          "notNull": true
+          "notNull": true,
+          "default": "'SNCF'"
         },
         "service_id": {
           "name": "service_id",
@@ -192,10 +187,9 @@
       },
       "foreignKeys": {},
       "compositePrimaryKeys": {
-        "gtfs_service_dates_feed_service_id_date_pk": {
-          "name": "gtfs_service_dates_feed_service_id_date_pk",
+        "gtfs_service_dates_service_id_date_pk": {
+          "name": "gtfs_service_dates_service_id_date_pk",
           "columns": [
-            "feed",
             "service_id",
             "date"
           ]
@@ -215,7 +209,8 @@
           "type": "gtfs_feed",
           "typeSchema": "public",
           "primaryKey": false,
-          "notNull": true
+          "notNull": true,
+          "default": "'SNCF'"
         },
         "trip_id": {
           "name": "trip_id",
@@ -316,7 +311,8 @@
           "type": "gtfs_feed",
           "typeSchema": "public",
           "primaryKey": false,
-          "notNull": true
+          "notNull": true,
+          "default": "'SNCF'"
         },
         "name": {
           "name": "name",
@@ -403,7 +399,8 @@
           "type": "gtfs_feed",
           "typeSchema": "public",
           "primaryKey": false,
-          "notNull": true
+          "notNull": true,
+          "default": "'SNCF'"
         },
         "route_id": {
           "name": "route_id",

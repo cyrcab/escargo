@@ -77,8 +77,7 @@ export const userTitles = pgTable(
 // Horaires théoriques (GTFS) : données publiques, une source par flux (`feed`),
 // remplacée en bloc à chaque import de ce flux.
 // Pas de clés étrangères : l'import vide puis recharge un flux dans une transaction.
-// Les trip_id et stop_id ne se chevauchent pas entre flux (`IDFM:…` d'un côté) ;
-// les route_id et service_id, si : ils sont clés avec le flux.
+// Les identifiants ne se chevauchent pas entre flux : ceux d'IDFM commencent tous par `IDFM:`.
 export const gtfsStops = pgTable(
   'gtfs_stops',
   {
@@ -93,16 +92,12 @@ export const gtfsStops = pgTable(
   (t) => [index().on(t.parentId), index().on(t.feed)],
 );
 
-export const gtfsRoutes = pgTable(
-  'gtfs_routes',
-  {
-    feed: gtfsFeed().notNull(),
-    id: text().notNull(),
-    shortName: text().notNull(),
-    longName: text().notNull(),
-  },
-  (t) => [primaryKey({ columns: [t.feed, t.id] })],
-);
+export const gtfsRoutes = pgTable('gtfs_routes', {
+  id: text().primaryKey(),
+  feed: gtfsFeed().notNull(),
+  shortName: text().notNull(),
+  longName: text().notNull(),
+});
 
 export const gtfsTrips = pgTable(
   'gtfs_trips',
@@ -143,7 +138,7 @@ export const gtfsServiceDates = pgTable(
     serviceId: text().notNull(),
     date: date().notNull(),
   },
-  (t) => [primaryKey({ columns: [t.feed, t.serviceId, t.date] }), index().on(t.date)],
+  (t) => [primaryKey({ columns: [t.serviceId, t.date] }), index().on(t.date)],
 );
 
 export const gtfsImports = pgTable(
