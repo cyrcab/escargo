@@ -32,10 +32,14 @@ function exclusive(name: string, task: () => Promise<void>) {
 }
 
 // Les deux imports partagent un verrou : deux transactions de plusieurs minutes en même
-// temps ralentiraient la base sans rien gagner.
+// temps ralentiraient la base sans rien gagner. Un échec SNCF ne bloque pas l'import IDFM.
 const refreshGtfs = exclusive('gtfs', async () => {
-  if (await isGtfsStale(db)) {
-    await importGtfs({ db, url: env.SNCF_GTFS_URL, dataDir: env.DATA_DIR });
+  try {
+    if (await isGtfsStale(db)) {
+      await importGtfs({ db, url: env.SNCF_GTFS_URL, dataDir: env.DATA_DIR });
+    }
+  } catch (error) {
+    console.error('[gtfs] échec import SNCF', error);
   }
   if (await isIdfmImportDue(db)) {
     await importIdfmGtfs({ db, url: env.IDFM_GTFS_URL, dataDir: env.DATA_DIR });

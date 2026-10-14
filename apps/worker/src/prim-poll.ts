@@ -34,7 +34,11 @@ export async function pollPrim({ db, redis, url, apiKey }: PrimPollOptions) {
   // Compté avant l'appel : un échec réseau consomme aussi le budget, par prudence.
   // Compteur et expiration ensemble, pour qu'un arrêt du worker ne laisse pas une clé éternelle.
   const [[error, count] = []] =
-    (await redis.multi().incr(callsKey).expire(callsKey, 2 * 24 * 3600, 'NX').exec()) ?? [];
+    (await redis
+      .multi()
+      .incr(callsKey)
+      .expire(callsKey, 2 * 24 * 3600, 'NX')
+      .exec()) ?? [];
   if (error) throw error;
   const callNumber = Number(count);
   if (!withinQuota(callNumber)) {
