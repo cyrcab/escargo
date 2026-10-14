@@ -1,9 +1,11 @@
+import type { MascotRecipe, TitleCategory } from '@escargo/shared';
 import {
   boolean,
   date,
   doublePrecision,
   index,
   integer,
+  jsonb,
   pgEnum,
   pgTable,
   primaryKey,
@@ -54,8 +56,11 @@ export const titles = pgTable('titles', {
   name: text().notNull(),
   description: text().notNull(),
   rarity: rarity().notNull(),
+  category: text().$type<TitleCategory>().notNull(),
   rule: text().notNull(),
   season: text(),
+  // Pièces de la mascotte qui illustre le titre (validées par MascotRecipe à l'import).
+  recipe: jsonb().$type<MascotRecipe>().notNull(),
   publishedAt: timestamp({ withTimezone: true }),
 });
 
