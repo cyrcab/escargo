@@ -1,0 +1,3 @@
+route_id,service_id,trip_id,trip_headsign,trip_short_name,direction_id,block_id,shape_id,wheelchair_accessible,bikes_allowed
+IDFM:C01737,IDFM:TN:0022f58d-1161-31b5-b866-4ff4712fe4fc,IDFM:TN:SNCF:c080967a-8571-4c6d-96f2-f56ce1feba41,VOBA,124303,1,,IDFM:shp_2_155,1,0
+IDFM:C01742,IDFM:TN:00bc46e9-420a-3e8c-99f7-100f9a83b0b2,IDFM:TN:SNCF:95f6b8c2-35c4-4901-a1ed-11fa1e9b969d,TAXE,TAXE79,0,,IDFM:shp_2_29,1,0
