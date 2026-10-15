@@ -1,0 +1,4079 @@
+# Catalogue de lancement : 500 titres, 24 catégories.
+# Source lisible : « Catalogue des titres — Escargo.md » (dossier du projet).
+# rule: TODO = condition machine encore à écrire ; un titre TODO n'est jamais seedé.
+# recipe : seules les pièces qui changent (cf. README).
+
+# --- Paliers annuels ---
+- id: voyageur-serein
+  name: "Voyageur serein"
+  description: "Cumul annuel de retard : moins de 1 h."
+  rarity: common
+  category: paliers
+  rule: TODO
+  season: null
+  recipe: { expression: normal }
+- id: habitue-du-quai
+  name: "Habitué du quai"
+  description: "Cumul annuel de retard : 1 h."
+  rarity: common
+  category: paliers
+  rule: TODO
+  season: null
+  recipe: { expression: normal, objet: cafe }
+- id: patient-confirme
+  name: "Patient confirmé"
+  description: "Cumul annuel de retard : 5 h."
+  rarity: common
+  category: paliers
+  rule: TODO
+  season: null
+  recipe: { expression: blase, objet: cafe, decor: zzz }
+- id: martyr-du-rail
+  name: "Martyr du rail"
+  description: "Cumul annuel de retard : 15 h."
+  rarity: rare
+  category: paliers
+  rule: TODO
+  season: null
+  recipe: { expression: blase, coquille: violet, objet: parapluie, decor: pluie }
+- id: legende-du-quai
+  name: "Légende du quai"
+  description: "Cumul annuel de retard : 30 h."
+  rarity: rare
+  category: paliers
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: cape, motif: etoiles, coquille: violet }
+- id: fantome-des-quais
+  name: "Fantôme des quais"
+  description: "Cumul annuel de retard : 60 h."
+  rarity: legendary
+  category: paliers
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, coquille: nuit, decor: lune }
+- id: resident-permanent
+  name: "Résident permanent"
+  description: "Cumul annuel de retard : 100 h."
+  rarity: legendary
+  category: paliers
+  rule: TODO
+  season: null
+  recipe: { expression: normal, cou: echarpe, coquille: or, objet: valise }
+- id: pilier-de-gare
+  name: "Pilier de gare"
+  description: "Cumul annuel de retard : 150 h."
+  rarity: legendary
+  category: paliers
+  rule: TODO
+  season: null
+  recipe: { expression: blase, cou: medaille, coquille: or }
+- id: statue-du-hall
+  name: "Statue du hall"
+  description: "Cumul annuel de retard : 200 h."
+  rarity: legendary
+  category: paliers
+  rule: TODO
+  season: null
+  recipe: { expression: endormi, motif: points, coquille: or, decor: zzz }
+- id: escargot-d-or
+  name: "Escargot d'or"
+  description: "Cumul annuel de retard : 250 h."
+  rarity: legendary
+  category: paliers
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: medaille, motif: etoiles, coquille: or, objet: trophee }
+
+# --- Un seul retard ---
+- id: petit-contretemps
+  name: "Petit contretemps"
+  description: "Un retard de 5 à 9 min."
+  rarity: common
+  category: unretard
+  rule: TODO
+  season: null
+  recipe: { expression: blase }
+- id: pile-a-l-heure-ou-presque
+  name: "Pile à l'heure, ou presque"
+  description: "Un retard de 5 min tout juste."
+  rarity: common
+  category: unretard
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, motif: points, decor: etoiles }
+- id: cafe-refroidi
+  name: "Café refroidi"
+  description: "Un retard de 10 min ou plus."
+  rarity: common
+  category: unretard
+  rule: TODO
+  season: null
+  recipe: { expression: blase, cou: echarpe, objet: cafe, decor: neige }
+- id: quart-d-heure-de-gloire
+  name: "Quart d'heure de gloire"
+  description: "Un retard de 15 min ou plus."
+  rarity: common
+  category: unretard
+  rule: TODO
+  season: null
+  recipe: { expression: blase, coquille: menthe }
+- id: chiffre-maudit
+  name: "Chiffre maudit"
+  description: "Un retard de 13 min tout juste."
+  rarity: rare
+  category: unretard
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, motif: points }
+- id: demi-tour-d-horloge
+  name: "Demi-tour d'horloge"
+  description: "Un retard de 30 min ou plus."
+  rarity: rare
+  category: unretard
+  rule: TODO
+  season: null
+  recipe: { expression: presse }
+- id: une-heure-de-sa-vie
+  name: "Une heure de sa vie"
+  description: "Un retard de 60 min ou plus."
+  rarity: rare
+  category: unretard
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, objet: valise }
+- id: epopee-ferroviaire
+  name: "Épopée ferroviaire"
+  description: "Un retard de 90 min ou plus."
+  rarity: rare
+  category: unretard
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, coquille: violet, objet: valise }
+- id: odyssee
+  name: "Odyssée"
+  description: "Un retard de 2 h ou plus."
+  rarity: legendary
+  category: unretard
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, coquille: or, objet: valise, decor: lune }
+- id: bivouac
+  name: "Bivouac"
+  description: "Un retard de 3 h ou plus."
+  rarity: legendary
+  category: unretard
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, coquille: nuit, objet: valise, decor: lune }
+
+# --- Séries et fidélité ---
+- id: aller-retour-maudit
+  name: "Aller-retour maudit"
+  description: "Un retard à l'aller et au retour le même jour."
+  rarity: common
+  category: series
+  rule: TODO
+  season: null
+  recipe: { expression: blase, coquille: violet }
+- id: colle-au-quai
+  name: "Collé au quai"
+  description: "3 retards dans la même semaine."
+  rarity: common
+  category: series
+  rule: TODO
+  season: null
+  recipe: { expression: blase, coquille: nuit }
+- id: abonne-aux-galeres
+  name: "Abonné aux galères"
+  description: "10 retards dans le même mois."
+  rarity: common
+  category: series
+  rule: TODO
+  season: null
+  recipe: { expression: blase, motif: etoiles }
+- id: cinquantaine
+  name: "Cinquantaine"
+  description: "50 retards vérifiés au total."
+  rarity: common
+  category: series
+  rule: TODO
+  season: null
+  recipe: { expression: blase, motif: points }
+- id: fidele-au-poste
+  name: "Fidèle au poste"
+  description: "Au moins un trajet enregistré 4 semaines de suite."
+  rarity: common
+  category: series
+  rule: TODO
+  season: null
+  recipe: { expression: blase, motif: eclair }
+- id: assidu
+  name: "Assidu"
+  description: "50 trajets enregistrés."
+  rarity: common
+  category: series
+  rule: TODO
+  season: null
+  recipe: { expression: blase, motif: damier }
+- id: semaine-pourrie
+  name: "Semaine pourrie"
+  description: "Un retard à chaque trajet d'une semaine, au moins 6 trajets."
+  rarity: rare
+  category: series
+  rule: TODO
+  season: null
+  recipe: { expression: blase, yeux: rondes }
+- id: centurion
+  name: "Centurion"
+  description: "100 retards vérifiés dans l'année."
+  rarity: rare
+  category: series
+  rule: TODO
+  season: null
+  recipe: { expression: blase, yeux: soleil }
+- id: miracule
+  name: "Miraculé"
+  description: "10 trajets à l'heure de suite."
+  rarity: rare
+  category: series
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, decor: etoiles }
+- id: veteran
+  name: "Vétéran"
+  description: "500 trajets enregistrés."
+  rarity: rare
+  category: series
+  rule: TODO
+  season: null
+  recipe: { expression: blase, yeux: soleil, coquille: violet }
+- id: collectionneur
+  name: "Collectionneur"
+  description: "250 retards vérifiés au total."
+  rarity: legendary
+  category: series
+  rule: TODO
+  season: null
+  recipe: { expression: blase, cou: medaille, coquille: nuit }
+- id: licorne
+  name: "Licorne"
+  description: "Un mois entier sans retard, au moins 15 trajets."
+  rarity: legendary
+  category: series
+  rule: TODO
+  season: null
+  recipe: { expression: amoureux, motif: etoiles, coquille: or }
+
+# --- Horaires et jours ---
+- id: aube-grise
+  name: "Aube grise"
+  description: "5 retards sur des trains partis avant 6 h 30."
+  rarity: common
+  category: horaires
+  rule: TODO
+  season: null
+  recipe: { expression: endormi, objet: cafe }
+- id: matin-difficile
+  name: "Matin difficile"
+  description: "3 retards avant 8 h dans la même semaine."
+  rarity: common
+  category: horaires
+  rule: TODO
+  season: null
+  recipe: { expression: endormi, coquille: menthe, objet: cafe }
+- id: heure-de-pointe
+  name: "Heure de pointe"
+  description: "10 retards sur des trains partis entre 7 h et 9 h."
+  rarity: common
+  category: horaires
+  rule: TODO
+  season: null
+  recipe: { expression: blase, yeux: monocle }
+- id: pause-dej
+  name: "Pause déj'"
+  description: "Un retard sur un train parti entre 12 h et 14 h."
+  rarity: common
+  category: horaires
+  rule: TODO
+  season: null
+  recipe: { expression: blase, objet: cafe }
+- id: diner-rechauffe
+  name: "Dîner réchauffé"
+  description: "10 retards sur des trains arrivés entre 19 h et 21 h."
+  rarity: common
+  category: horaires
+  rule: TODO
+  season: null
+  recipe: { expression: blase, yeux: 3d }
+- id: couche-tard
+  name: "Couche-tard"
+  description: "Un retard sur un train arrivé après 23 h."
+  rarity: common
+  category: horaires
+  rule: TODO
+  season: null
+  recipe: { expression: blase, decor: lune }
+- id: lundi-au-soleil
+  name: "Lundi au soleil"
+  description: "10 retards un lundi."
+  rarity: common
+  category: horaires
+  rule: TODO
+  season: null
+  recipe: { expression: blase, yeux: soleil, coquille: menthe }
+- id: week-end-gache
+  name: "Week-end gâché"
+  description: "Un retard un samedi ou un dimanche."
+  rarity: common
+  category: horaires
+  rule: TODO
+  season: null
+  recipe: { expression: blase, objet: valise }
+- id: minuit-passe
+  name: "Minuit passé"
+  description: "Une arrivée après minuit à cause d'un retard."
+  rarity: rare
+  category: horaires
+  rule: TODO
+  season: null
+  recipe: { expression: blase, coquille: violet, decor: lune }
+- id: tour-de-cadran
+  name: "Tour de cadran"
+  description: "Un retard sur chaque créneau : matin, midi, soir et nuit."
+  rarity: rare
+  category: horaires
+  rule: TODO
+  season: null
+  recipe: { expression: endormi, objet: cafe, decor: lune }
+- id: vendredi-13
+  name: "Vendredi 13"
+  description: "Un retard un vendredi 13."
+  rarity: rare
+  category: horaires
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, coquille: nuit, decor: eclairs }
+- id: premier-de-l-an
+  name: "Premier de l'an"
+  description: "Un retard le 1er janvier."
+  rarity: rare
+  category: horaires
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, cou: echarpe, motif: points, decor: neige }
+
+# --- Trains et lignes ---
+- id: terminus
+  name: "TERminus"
+  description: "20 retards en TER."
+  rarity: common
+  category: lignes
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: menthe }
+- id: grande-vitesse-petite-patience
+  name: "Grande vitesse, petite patience"
+  description: "Un retard en TGV."
+  rarity: common
+  category: lignes
+  rule: TODO
+  season: null
+  recipe: { expression: presse, motif: damier }
+- id: francilien-eprouve
+  name: "Francilien éprouvé"
+  description: "20 retards en RER ou Transilien."
+  rarity: common
+  category: lignes
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: menthe, objet: cafe }
+- id: gare-favorite
+  name: "Gare favorite"
+  description: "30 retards au départ de la même gare."
+  rarity: common
+  category: lignes
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: violet }
+- id: navetteur-certifie
+  name: "Navetteur certifié"
+  description: "40 trajets entre les mêmes deux gares."
+  rarity: common
+  category: lignes
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: nuit }
+- id: explorateur
+  name: "Explorateur"
+  description: "Des retards dans 10 gares différentes."
+  rarity: common
+  category: lignes
+  rule: TODO
+  season: null
+  recipe: { expression: normal, objet: valise }
+- id: citoyen-des-intercites
+  name: "Citoyen des Intercités"
+  description: "5 retards en Intercités."
+  rarity: rare
+  category: lignes
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: etoiles }
+- id: globe-trotter
+  name: "Globe-trotter"
+  description: "Des retards sur 5 lignes différentes."
+  rarity: rare
+  category: lignes
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: violet, objet: valise }
+- id: ma-ligne-ma-croix
+  name: "Ma ligne, ma croix"
+  description: "50 retards sur la même ligne."
+  rarity: rare
+  category: lignes
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: points }
+- id: correspondance-ratee
+  name: "Correspondance ratée"
+  description: "Deux trajets enchaînés où le retard du premier dépasse le temps de correspondance."
+  rarity: rare
+  category: lignes
+  rule: TODO
+  season: null
+  recipe: { expression: presse, motif: points, objet: valise }
+- id: grand-chelem
+  name: "Grand chelem"
+  description: "Au moins un retard en TER, Intercités, TGV et RER ou Transilien."
+  rarity: legendary
+  category: lignes
+  rule: TODO
+  season: null
+  recipe: { expression: presse, motif: damier, coquille: or, objet: cafe }
+- id: tour-de-france
+  name: "Tour de France"
+  description: "Des retards dans 5 régions différentes."
+  rarity: legendary
+  category: lignes
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, coquille: or, objet: valise }
+
+# --- Suppressions et galères ---
+- id: faux-depart
+  name: "Faux départ"
+  description: "Un retard annoncé de 30 min ou plus dès le départ."
+  rarity: common
+  category: suppressions
+  rule: TODO
+  season: null
+  recipe: { expression: blase, motif: etoiles, coquille: menthe }
+- id: arret-imprevu
+  name: "Arrêt imprévu"
+  description: "Un retard qui augmente de 20 min ou plus pendant le trajet."
+  rarity: common
+  category: suppressions
+  rule: TODO
+  season: null
+  recipe: { expression: blase, motif: points, coquille: menthe }
+- id: quai-desert
+  name: "Quai désert"
+  description: "Un train supprimé avant 7 h."
+  rarity: common
+  category: suppressions
+  rule: TODO
+  season: null
+  recipe: { expression: endormi, objet: cafe, decor: code }
+- id: annule-pas-abattu
+  name: "Annulé, pas abattu"
+  description: "Un nouveau train pris dans l'heure après une suppression."
+  rarity: common
+  category: suppressions
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, decor: code }
+- id: optimiste
+  name: "Optimiste"
+  description: "Un trajet à l'heure juste après un retard de plus d'une heure."
+  rarity: common
+  category: suppressions
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, coquille: menthe, decor: etoiles }
+- id: coince-entre-deux-gares
+  name: "Coincé entre deux gares"
+  description: "Un retard qui augmente de 15 min entre deux arrêts."
+  rarity: rare
+  category: suppressions
+  rule: TODO
+  season: null
+  recipe: { expression: blase, motif: etoiles, coquille: violet }
+- id: montagnes-russes
+  name: "Montagnes russes"
+  description: "Un retard annoncé qui baisse puis remonte pendant le trajet."
+  rarity: rare
+  category: suppressions
+  rule: TODO
+  season: null
+  recipe: { expression: blase, motif: points, coquille: violet }
+- id: double-peine
+  name: "Double peine"
+  description: "Un train supprimé, puis le train suivant en retard."
+  rarity: rare
+  category: suppressions
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, coquille: violet, decor: code }
+- id: chasseur-de-fantomes
+  name: "Chasseur de fantômes"
+  description: "5 trains supprimés."
+  rarity: rare
+  category: suppressions
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, coquille: menthe, decor: code }
+- id: maison-hantee
+  name: "Maison hantée"
+  description: "10 trains supprimés dans l'année."
+  rarity: legendary
+  category: suppressions
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, coquille: or, decor: code }
+
+# --- Saisons et calendrier ---
+- id: rentree-difficile
+  name: "Rentrée difficile"
+  description: "Un retard pendant la première semaine de septembre."
+  rarity: common
+  category: saisons
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: eclair }
+- id: feuilles-mortes
+  name: "Feuilles mortes"
+  description: "10 retards en octobre et novembre."
+  rarity: common
+  category: saisons
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: damier }
+- id: sous-la-pluie
+  name: "Sous la pluie"
+  description: "Un retard un jour de pluie."
+  rarity: common
+  category: saisons
+  rule: TODO
+  season: null
+  requires: [meteo]
+  recipe: { expression: blase, objet: parapluie, decor: pluie }
+- id: vacances-en-suspens
+  name: "Vacances en suspens"
+  description: "Un retard le premier jour de vacances scolaires, hors été."
+  rarity: rare
+  category: saisons
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, yeux: soleil, motif: points }
+- id: pont-de-mai
+  name: "Pont de mai"
+  description: "Un retard un jour de pont en mai."
+  rarity: rare
+  category: saisons
+  rule: TODO
+  season: null
+  recipe: { expression: normal, decor: confettis }
+- id: poisson-d-avril
+  name: "Poisson d'avril"
+  description: "Un retard le 1er avril."
+  rarity: rare
+  category: saisons
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, motif: points, coquille: violet }
+- id: saint-valentin-rate
+  name: "Saint-Valentin raté"
+  description: "Un retard le 14 février après 18 h."
+  rarity: rare
+  category: saisons
+  rule: TODO
+  season: null
+  recipe: { expression: amoureux, decor: coeurs }
+- id: bonhomme-de-neige
+  name: "Bonhomme de neige"
+  description: "Un retard un jour de neige."
+  rarity: rare
+  category: saisons
+  rule: TODO
+  season: null
+  requires: [meteo]
+  recipe: { expression: normal, cou: echarpe, decor: neige }
+- id: canicule
+  name: "Canicule"
+  description: "Un retard par plus de 35 °C."
+  rarity: rare
+  category: saisons
+  rule: TODO
+  season: null
+  requires: [meteo]
+  recipe: { expression: normal, yeux: soleil }
+- id: quatre-saisons
+  name: "Quatre saisons"
+  description: "Au moins un retard à chaque saison de l'année."
+  rarity: rare
+  category: saisons
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: rondes }
+- id: noel-sur-le-quai
+  name: "Noël sur le quai"
+  description: "Un retard le 24 ou le 25 décembre."
+  rarity: legendary
+  category: saisons
+  rule: TODO
+  season: null
+  recipe: { expression: blase, cou: echarpe, motif: etoiles, coquille: or, decor: neige }
+- id: annee-bissextile
+  name: "Année bissextile"
+  description: "Un retard un 29 février (prochain en 2028)."
+  rarity: legendary
+  category: saisons
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, coquille: or }
+
+# --- Pop culture ---
+- id: que-la-patience-soit-avec-toi
+  name: "Que la patience soit avec toi"
+  description: "500 min de retard cumulées."
+  rarity: common
+  category: popculture
+  rule: TODO
+  season: null
+  recipe: { expression: normal, cou: cape, decor: etoiles }
+- id: un-jour-sans-fin
+  name: "Un jour sans fin"
+  description: "Le même retard, à la minute près, deux jours de suite."
+  rarity: rare
+  category: popculture
+  rule: TODO
+  season: null
+  recipe: { expression: blase, coquille: violet, objet: cafe, decor: zzz }
+- id: retour-vers-le-quai
+  name: "Retour vers le quai"
+  description: "Reprendre le même train le lendemain d'un retard d'une heure ou plus."
+  rarity: rare
+  category: popculture
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, yeux: soleil, motif: eclair, decor: eclairs }
+- id: le-retard-contre-attaque
+  name: "Le Retard contre-attaque"
+  description: "Un deuxième retard de 30 min ou plus dans la même semaine."
+  rarity: rare
+  category: popculture
+  rule: TODO
+  season: null
+  recipe: { expression: presse, yeux: masque, cou: cape, coquille: nuit, decor: etoiles }
+- id: game-of-trains
+  name: "Game of Trains"
+  description: "10 retards entre décembre et février."
+  rarity: rare
+  category: popculture
+  rule: TODO
+  season: null
+  recipe: { expression: blase, cou: echarpe, coquille: nuit, decor: neige }
+- id: le-quai-des-brumes
+  name: "Le Quai des brumes"
+  description: "Un retard un matin de brouillard."
+  rarity: rare
+  category: popculture
+  rule: TODO
+  season: null
+  requires: [meteo]
+  recipe: { expression: endormi, cou: echarpe, coquille: menthe, decor: pluie }
+- id: le-pole-express
+  name: "Le Pôle Express"
+  description: "Un retard sur un train arrivé après 23 h en décembre."
+  rarity: rare
+  category: popculture
+  rule: TODO
+  season: null
+  recipe: { expression: endormi, cou: echarpe, motif: etoiles, decor: neige }
+- id: interstellaire
+  name: "Interstellaire"
+  description: "1 000 min de retard cumulées en TGV."
+  rarity: rare
+  category: popculture
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, motif: anneau, coquille: violet, decor: etoiles }
+- id: rapides-et-furieux
+  name: "Rapides et furieux"
+  description: "Un retard de 30 min ou plus en TGV."
+  rarity: rare
+  category: popculture
+  rule: TODO
+  season: null
+  recipe: { expression: presse, yeux: soleil, motif: damier }
+- id: les-bronzes-font-du-quai
+  name: "Les Bronzés font du quai"
+  description: "Un retard le premier jour des vacances d'été."
+  rarity: rare
+  category: popculture
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, yeux: soleil, cou: fleurs, objet: cafe }
+- id: bug-dans-la-matrice
+  name: "Bug dans la matrice"
+  description: "Un retard estimé qui change 5 fois pendant le trajet."
+  rarity: rare
+  category: popculture
+  rule: TODO
+  season: null
+  recipe: { expression: blase, yeux: soleil, coquille: nuit, decor: code }
+- id: le-fabuleux-destin
+  name: "Le Fabuleux Destin"
+  description: "25 titres débloqués."
+  rarity: rare
+  category: popculture
+  rule: TODO
+  season: null
+  recipe: { expression: amoureux, motif: coeurs, decor: confettis }
+- id: les-aventuriers-du-quai-perdu
+  name: "Les Aventuriers du quai perdu"
+  description: "Des retards dans 20 gares différentes."
+  rarity: rare
+  category: popculture
+  rule: TODO
+  season: null
+  recipe: { expression: presse, cou: echarpe, objet: valise }
+- id: le-bon-la-brute-et-le-retard
+  name: "Le Bon, la Brute et le Retard"
+  description: "Des retards de 5, 30 et 60 min ou plus dans la même semaine."
+  rarity: rare
+  category: popculture
+  rule: TODO
+  season: null
+  recipe: { expression: blase, yeux: soleil, cou: sherif }
+- id: le-parrain
+  name: "Le Parrain"
+  description: "3 amis invités qui enregistrent un trajet."
+  rarity: rare
+  category: popculture
+  rule: TODO
+  season: null
+  requires: [amis]
+  recipe: { expression: blase, cou: noeud, coquille: nuit }
+- id: le-seigneur-des-retards
+  name: "Le Seigneur des Retards"
+  description: "3 retards d'une heure ou plus dans l'année."
+  rarity: legendary
+  category: popculture
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: cape, motif: anneau, coquille: or, decor: lune }
+- id: le-train-sifflera-trois-fois
+  name: "Le train sifflera trois fois"
+  description: "3 retards dans la même journée."
+  rarity: legendary
+  category: popculture
+  rule: TODO
+  season: null
+  recipe: { expression: blase, cou: sherif, coquille: or }
+- id: mission-impossible
+  name: "Mission : Impossible"
+  description: "5 trajets à l'heure de suite sur sa ligne la plus en retard."
+  rarity: legendary
+  category: popculture
+  rule: TODO
+  season: null
+  recipe: { expression: blase, yeux: masque, coquille: nuit }
+
+# --- Classements ---
+- id: ambassadeur
+  name: "Ambassadeur"
+  description: "Partager son bilan ou un titre 5 fois."
+  rarity: common
+  category: classements
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: medaille, decor: confettis }
+- id: roi-de-la-ligne
+  name: "Roi de la ligne"
+  description: "Top 10 de sa ligne à la fin d'un mois."
+  rarity: rare
+  category: classements
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: cape, coquille: violet }
+- id: sur-le-podium
+  name: "Sur le podium"
+  description: "Top 3 de sa ligne à la fin d'un mois."
+  rarity: legendary
+  category: classements
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: medaille, coquille: or, objet: trophee }
+- id: champion-national
+  name: "Champion national"
+  description: "Top 100 en France à la fin de l'année."
+  rarity: legendary
+  category: classements
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: medaille, motif: etoiles, coquille: or, decor: confettis }
+
+# --- Cumul à vie ---
+- id: premiere-heure
+  name: "Première heure"
+  description: "1 h de retard cumulée."
+  rarity: common
+  category: cumul
+  rule: TODO
+  season: null
+  recipe: { expression: blase, motif: eclair, coquille: menthe }
+- id: matinee-envolee
+  name: "Matinée envolée"
+  description: "3 h cumulées."
+  rarity: common
+  category: cumul
+  rule: TODO
+  season: null
+  recipe: { expression: endormi, coquille: violet, objet: cafe }
+- id: mi-temps
+  name: "Mi-temps"
+  description: "6 h cumulées."
+  rarity: common
+  category: cumul
+  rule: TODO
+  season: null
+  recipe: { expression: blase, motif: damier, coquille: menthe }
+- id: demi-journee
+  name: "Demi-journée"
+  description: "12 h cumulées."
+  rarity: common
+  category: cumul
+  rule: TODO
+  season: null
+  recipe: { expression: blase, motif: eclair, coquille: violet }
+- id: journee-entiere
+  name: "Journée entière"
+  description: "24 h cumulées."
+  rarity: common
+  category: cumul
+  rule: TODO
+  season: null
+  recipe: { expression: blase, motif: damier, coquille: violet }
+- id: jour-et-demi
+  name: "Jour et demi"
+  description: "36 h cumulées."
+  rarity: rare
+  category: cumul
+  rule: TODO
+  season: null
+  recipe: { expression: blase, motif: etoiles, coquille: nuit }
+- id: week-end-perdu
+  name: "Week-end perdu"
+  description: "48 h cumulées."
+  rarity: rare
+  category: cumul
+  rule: TODO
+  season: null
+  recipe: { expression: endormi, coquille: nuit, objet: cafe }
+- id: trois-jours-de-quai
+  name: "Trois jours de quai"
+  description: "72 h cumulées."
+  rarity: rare
+  category: cumul
+  rule: TODO
+  season: null
+  recipe: { expression: blase, motif: points, coquille: nuit }
+- id: centaine-d-heures
+  name: "Centaine d'heures"
+  description: "100 h cumulées."
+  rarity: rare
+  category: cumul
+  rule: TODO
+  season: null
+  recipe: { expression: blase, motif: eclair, coquille: nuit }
+- id: semaine-sur-le-quai
+  name: "Semaine sur le quai"
+  description: "168 h cumulées."
+  rarity: legendary
+  category: cumul
+  rule: TODO
+  season: null
+  recipe: { expression: endormi, coquille: or, objet: cafe }
+- id: quinzaine
+  name: "Quinzaine"
+  description: "336 h cumulées."
+  rarity: legendary
+  category: cumul
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, coquille: nuit }
+- id: un-mois-de-ma-vie
+  name: "Un mois de ma vie"
+  description: "720 h cumulées."
+  rarity: legendary
+  category: cumul
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, coquille: violet }
+- id: retardataire-en-herbe
+  name: "Retardataire en herbe"
+  description: "10 retards vérifiés."
+  rarity: common
+  category: cumul
+  rule: TODO
+  season: null
+  recipe: { expression: blase, motif: damier, coquille: nuit }
+- id: habitue-des-panneaux
+  name: "Habitué des panneaux"
+  description: "25 retards vérifiés."
+  rarity: common
+  category: cumul
+  rule: TODO
+  season: null
+  recipe: { expression: blase, decor: etoiles }
+- id: septante-cinq
+  name: "Septante-cinq"
+  description: "75 retards vérifiés."
+  rarity: common
+  category: cumul
+  rule: TODO
+  season: null
+  recipe: { expression: blase, decor: zzz }
+- id: vieux-de-la-vieille
+  name: "Vieux de la vieille"
+  description: "150 retards vérifiés."
+  rarity: rare
+  category: cumul
+  rule: TODO
+  season: null
+  recipe: { expression: blase, coquille: violet, decor: etoiles }
+- id: double-centurion
+  name: "Double centurion"
+  description: "200 retards vérifiés."
+  rarity: rare
+  category: cumul
+  rule: TODO
+  season: null
+  recipe: { expression: blase, coquille: violet, decor: zzz }
+- id: spartiate
+  name: "Spartiate"
+  description: "300 retards vérifiés."
+  rarity: rare
+  category: cumul
+  rule: TODO
+  season: null
+  recipe: { expression: blase, cou: cape, coquille: violet }
+- id: les-quatre-cents-coups
+  name: "Les Quatre Cents Coups"
+  description: "400 retards vérifiés."
+  rarity: rare
+  category: cumul
+  rule: TODO
+  season: null
+  recipe: { expression: blase, cou: echarpe, coquille: violet }
+- id: demi-millier
+  name: "Demi-millier"
+  description: "500 retards vérifiés."
+  rarity: rare
+  category: cumul
+  rule: TODO
+  season: null
+  recipe: { expression: blase, coquille: menthe, decor: etoiles }
+- id: monument-historique
+  name: "Monument historique"
+  description: "750 retards vérifiés."
+  rarity: legendary
+  category: cumul
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, coquille: menthe }
+- id: millenaire
+  name: "Millénaire"
+  description: "1 000 retards vérifiés."
+  rarity: legendary
+  category: cumul
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, motif: etoiles, coquille: or }
+- id: premiere-bougie
+  name: "Première bougie"
+  description: "Inscrit depuis 1 an, au moins 50 trajets."
+  rarity: common
+  category: cumul
+  rule: TODO
+  season: null
+  recipe: { expression: blase, decor: confettis }
+- id: deux-bougies
+  name: "Deux bougies"
+  description: "Inscrit depuis 2 ans, au moins 100 trajets."
+  rarity: rare
+  category: cumul
+  rule: TODO
+  season: null
+  recipe: { expression: blase, coquille: violet, decor: confettis }
+- id: cinq-ans-de-maison
+  name: "Cinq ans de maison"
+  description: "Inscrit depuis 5 ans, au moins 250 trajets."
+  rarity: legendary
+  category: cumul
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, coquille: or, decor: confettis }
+
+# --- Équivalences ---
+- id: oeuf-a-la-coque
+  name: "Œuf à la coque"
+  description: "Cumul à vie de retard : 10 min."
+  rarity: common
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: monocle }
+- id: pause-cafe
+  name: "Pause café"
+  description: "Cumul à vie de retard : 15 min."
+  rarity: common
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: violet, objet: cafe }
+- id: pates-al-dente
+  name: "Pâtes al dente"
+  description: "Cumul à vie de retard : 20 min."
+  rarity: common
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: 3d }
+- id: pizza-bien-cuite
+  name: "Pizza bien cuite"
+  description: "Cumul à vie de retard : 25 min."
+  rarity: common
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: etoiles, coquille: menthe }
+- id: sieste-eclair
+  name: "Sieste éclair"
+  description: "Cumul à vie de retard : 30 min."
+  rarity: common
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, decor: eclairs }
+- id: seance-de-sport
+  name: "Séance de sport"
+  description: "Cumul à vie de retard : 40 min."
+  rarity: common
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, cou: medaille }
+- id: episode-complet
+  name: "Épisode complet"
+  description: "Cumul à vie de retard : 45 min."
+  rarity: common
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, objet: popcorn }
+- id: cours-de-yoga
+  name: "Cours de yoga"
+  description: "Cumul à vie de retard : 1 h."
+  rarity: common
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: rondes, cou: medaille }
+- id: album-en-entier
+  name: "Album en entier"
+  description: "Cumul à vie de retard : 1 h 15."
+  rarity: common
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, decor: notes }
+- id: match-de-foot
+  name: "Match de foot"
+  description: "Cumul à vie de retard : 1 h 30."
+  rarity: common
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, cou: medaille, coquille: menthe }
+- id: parislyon
+  name: "Paris–Lyon"
+  description: "Cumul à vie de retard : 1 h 45."
+  rarity: common
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: menthe, objet: valise }
+- id: long-metrage
+  name: "Long-métrage"
+  description: "Cumul à vie de retard : 2 h."
+  rarity: common
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: menthe, objet: popcorn }
+- id: concert-complet
+  name: "Concert complet"
+  description: "Cumul à vie de retard : 2 h 15."
+  rarity: common
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: menthe, decor: notes }
+- id: pot-au-feu
+  name: "Pot-au-feu"
+  description: "Cumul à vie de retard : 2 h 30."
+  rarity: common
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: points, coquille: menthe }
+- id: parismarseille
+  name: "Paris–Marseille"
+  description: "Cumul à vie de retard : 3 h."
+  rarity: common
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: nuit, objet: valise }
+- id: boeuf-bourguignon
+  name: "Bœuf bourguignon"
+  description: "Cumul à vie de retard : 3 h 15."
+  rarity: common
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: eclair, coquille: menthe }
+- id: match-en-cinq-sets
+  name: "Match en cinq sets"
+  description: "Cumul à vie de retard : 3 h 30."
+  rarity: common
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, cou: medaille, coquille: violet }
+- id: opera-complet
+  name: "Opéra complet"
+  description: "Cumul à vie de retard : 4 h."
+  rarity: common
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: violet, decor: notes }
+- id: marathonien-du-dimanche
+  name: "Marathonien du dimanche"
+  description: "Cumul à vie de retard : 4 h 30."
+  rarity: common
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, cou: medaille, objet: valise }
+- id: grasse-matinee
+  name: "Grasse matinée"
+  description: "Cumul à vie de retard : 5 h."
+  rarity: common
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: endormi, objet: cafe, decor: zzz }
+- id: roman-de-gare
+  name: "Roman de gare"
+  description: "Cumul à vie de retard : 5 h 30."
+  rarity: common
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: rondes, coquille: menthe }
+- id: journee-de-cours
+  name: "Journée de cours"
+  description: "Cumul à vie de retard : 6 h."
+  rarity: common
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: rondes, coquille: violet }
+- id: journee-de-travail
+  name: "Journée de travail"
+  description: "Cumul à vie de retard : 7 h."
+  rarity: common
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, cou: noeud }
+- id: nuit-complete
+  name: "Nuit complète"
+  description: "Cumul à vie de retard : 8 h."
+  rarity: common
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: endormi, coquille: menthe, objet: cafe, decor: lune }
+- id: saison-de-serie
+  name: "Saison de série"
+  description: "Cumul à vie de retard : 10 h."
+  rarity: common
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: violet, objet: popcorn }
+- id: trilogie-version-longue
+  name: "Trilogie version longue"
+  description: "Cumul à vie de retard : 11 h."
+  rarity: common
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: nuit, objet: popcorn }
+- id: traversee-vers-la-corse
+  name: "Traversée vers la Corse"
+  description: "Cumul à vie de retard : 13 h."
+  rarity: common
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, motif: points, objet: valise }
+- id: paristokyo-en-avion
+  name: "Paris–Tokyo en avion"
+  description: "Cumul à vie de retard : 14 h."
+  rarity: common
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: etoiles, objet: valise }
+- id: la-manche-a-la-nage
+  name: "La Manche à la nage"
+  description: "Cumul à vie de retard : 16 h."
+  rarity: rare
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, cou: medaille, coquille: violet, objet: valise }
+- id: heures-de-conduite
+  name: "Heures de conduite"
+  description: "Cumul à vie de retard : 20 h."
+  rarity: common
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: damier, coquille: menthe }
+- id: marathon-de-saga
+  name: "Marathon de saga"
+  description: "Cumul à vie de retard : 25 h."
+  rarity: rare
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, cou: medaille, objet: popcorn }
+- id: pave-lu-en-entier
+  name: "Pavé lu en entier"
+  description: "Cumul à vie de retard : 30 h."
+  rarity: rare
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: rondes, coquille: nuit }
+- id: semaine-de-35-heures
+  name: "Semaine de 35 heures"
+  description: "Cumul à vie de retard : 35 h."
+  rarity: rare
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, cou: noeud, coquille: violet }
+- id: tour-de-france-a-velo
+  name: "Tour de France à vélo"
+  description: "Cumul à vie de retard : 80 h."
+  rarity: rare
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, cou: medaille, coquille: menthe, objet: valise }
+- id: bases-de-la-guitare
+  name: "Bases de la guitare"
+  description: "Cumul à vie de retard : 100 h."
+  rarity: rare
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, objet: guitare }
+- id: japonais-debutant
+  name: "Japonais débutant"
+  description: "Cumul à vie de retard : 150 h."
+  rarity: rare
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: rondes, motif: etoiles }
+- id: conges-payes
+  name: "Congés payés"
+  description: "Cumul à vie de retard : 175 h."
+  rarity: legendary
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: or, objet: valise }
+- id: traversee-de-l-atlantique-a-la-voile
+  name: "Traversée de l'Atlantique à la voile"
+  description: "Cumul à vie de retard : 400 h."
+  rarity: legendary
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: etoiles, coquille: or, objet: valise }
+- id: les-mille-et-une-nuits
+  name: "Les Mille et Une Nuits"
+  description: "Cumul à vie de retard : 1 001 h."
+  rarity: legendary
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: endormi, motif: etoiles, coquille: or, decor: lune }
+- id: le-tour-du-monde-en-80-jours
+  name: "Le Tour du monde en 80 jours"
+  description: "Cumul à vie de retard : 1 920 h."
+  rarity: legendary
+  category: equivalences
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, yeux: monocle, coquille: or, objet: valise }
+
+# --- Records personnels ---
+- id: nouveau-record
+  name: "Nouveau record"
+  description: "Battre son pire retard."
+  rarity: common
+  category: records
+  rule: TODO
+  season: null
+  recipe: { expression: blase, objet: trophee }
+- id: jour-record
+  name: "Jour record"
+  description: "Battre son cumul quotidien le plus haut."
+  rarity: common
+  category: records
+  rule: TODO
+  season: null
+  recipe: { expression: blase, coquille: menthe, objet: trophee }
+- id: semaine-record
+  name: "Semaine record"
+  description: "Battre son cumul hebdomadaire le plus haut."
+  rarity: common
+  category: records
+  rule: TODO
+  season: null
+  recipe: { expression: blase, coquille: violet, objet: trophee }
+- id: mois-record
+  name: "Mois record"
+  description: "Battre son cumul mensuel le plus haut."
+  rarity: common
+  category: records
+  rule: TODO
+  season: null
+  recipe: { expression: blase, coquille: nuit, objet: trophee }
+- id: mois-noir
+  name: "Mois noir"
+  description: "Plus de 3 h de retard dans un mois."
+  rarity: common
+  category: records
+  rule: TODO
+  season: null
+  recipe: { expression: blase, coquille: menthe, decor: zzz }
+- id: deja
+  name: "Déjà ?"
+  description: "Dépasser le cumul de toute l'année précédente."
+  rarity: common
+  category: records
+  rule: TODO
+  season: null
+  recipe: { expression: blase, coquille: menthe, decor: lune }
+- id: rechute
+  name: "Rechute"
+  description: "Un mois en hausse après 3 mois de baisse."
+  rarity: common
+  category: records
+  rule: TODO
+  season: null
+  recipe: { expression: blase, coquille: nuit, decor: etoiles }
+- id: petit-joueur
+  name: "Petit joueur"
+  description: "Moins de 10 min de retard sur un mois, au moins 10 trajets."
+  rarity: common
+  category: records
+  rule: TODO
+  season: null
+  recipe: { expression: victoire }
+- id: rattrapage
+  name: "Rattrapage"
+  description: "Une semaine sans retard juste après sa pire semaine."
+  rarity: common
+  category: records
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, objet: trophee, decor: etoiles }
+- id: recordman
+  name: "Recordman"
+  description: "Battre son pire retard 3 fois."
+  rarity: rare
+  category: records
+  rule: TODO
+  season: null
+  recipe: { expression: blase, motif: etoiles, objet: trophee }
+- id: double
+  name: "Doublé"
+  description: "Battre son pire retard deux jours de suite."
+  rarity: rare
+  category: records
+  rule: TODO
+  season: null
+  recipe: { expression: blase, motif: points, objet: trophee }
+- id: en-progres
+  name: "En progrès"
+  description: "3 mois de suite avec un cumul en baisse."
+  rarity: rare
+  category: records
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, motif: etoiles }
+- id: retard-moyen
+  name: "Retard moyen"
+  description: "Plus de 15 min de retard moyen sur un mois, au moins 10 retards."
+  rarity: rare
+  category: records
+  rule: TODO
+  season: null
+  recipe: { expression: blase, coquille: nuit, decor: zzz }
+- id: regulier-comme-une-horloge
+  name: "Régulier comme une horloge"
+  description: "5 retards de durée identique à la minute."
+  rarity: rare
+  category: records
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, motif: points, coquille: menthe }
+- id: grand-ecart
+  name: "Grand écart"
+  description: "Plus d'une heure entre son plus petit et son plus grand retard de la semaine."
+  rarity: rare
+  category: records
+  rule: TODO
+  season: null
+  recipe: { expression: blase, coquille: nuit, decor: lune }
+- id: mieux-que-l-an-dernier
+  name: "Mieux que l'an dernier"
+  description: "Finir l'année sous le cumul de l'année précédente."
+  rarity: rare
+  category: records
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, motif: points }
+- id: pire-que-l-an-dernier
+  name: "Pire que l'an dernier"
+  description: "Dépasser le cumul de l'année précédente avant le 30 juin."
+  rarity: rare
+  category: records
+  rule: TODO
+  season: null
+  recipe: { expression: blase, motif: eclair, objet: trophee }
+- id: premiere-annee-complete
+  name: "Première année complète"
+  description: "Au moins un trajet chaque mois pendant 12 mois de suite."
+  rarity: rare
+  category: records
+  rule: TODO
+  season: null
+  recipe: { expression: surpris }
+- id: tous-les-records
+  name: "Tous les records"
+  description: "Pire jour, pire semaine et pire mois battus le même mois."
+  rarity: legendary
+  category: records
+  rule: TODO
+  season: null
+  recipe: { expression: blase, coquille: or, objet: trophee }
+- id: annee-blanche
+  name: "Année blanche"
+  description: "Une année entière sans retard, au moins 100 trajets."
+  rarity: legendary
+  category: records
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, coquille: or, decor: neige }
+
+# --- Nombres et minutes ---
+- id: septieme-ciel
+  name: "Septième ciel"
+  description: "Un retard de 7 min tout juste."
+  rarity: common
+  category: nombres
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, motif: points, coquille: nuit }
+- id: dix-de-der
+  name: "Dix de der"
+  description: "Un retard de 10 min tout juste."
+  rarity: common
+  category: nombres
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, motif: etoiles }
+- id: vingt-sur-vingt
+  name: "Vingt sur vingt"
+  description: "Un retard de 20 min tout juste."
+  rarity: common
+  category: nombres
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, motif: eclair }
+- id: vingt-quatre-carats
+  name: "Vingt-quatre carats"
+  description: "Un retard de 24 min tout juste."
+  rarity: common
+  category: nombres
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, motif: damier }
+- id: trente-et-un
+  name: "Trente et un"
+  description: "Un retard de 31 min tout juste."
+  rarity: common
+  category: nombres
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, yeux: rondes, motif: points }
+- id: cinquante-cinquante
+  name: "Cinquante-cinquante"
+  description: "Un retard de 50 min tout juste."
+  rarity: common
+  category: nombres
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, yeux: monocle, motif: points }
+- id: double-de-chiffres
+  name: "Doublé de chiffres"
+  description: "Un retard de 11, 22, 33, 44 ou 55 min."
+  rarity: common
+  category: nombres
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, coquille: menthe }
+- id: retard-au-carre
+  name: "Retard au carré"
+  description: "Un retard de 16, 25, 36, 49 ou 64 min."
+  rarity: common
+  category: nombres
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, yeux: 3d, motif: points }
+- id: nombre-premier
+  name: "Nombre premier"
+  description: "5 retards dont la durée est un nombre premier."
+  rarity: common
+  category: nombres
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, motif: etoiles, coquille: menthe }
+- id: pair-et-impair
+  name: "Pair et impair"
+  description: "Un retard pair et un retard impair le même jour."
+  rarity: common
+  category: nombres
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, motif: eclair, coquille: menthe }
+- id: treize-a-la-douzaine
+  name: "Treize à la douzaine"
+  description: "13 retards dans le même mois."
+  rarity: common
+  category: nombres
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, motif: damier, coquille: menthe }
+- id: onze-heures-onze
+  name: "Onze heures onze"
+  description: "Une arrivée réelle à 11 h 11."
+  rarity: common
+  category: nombres
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, motif: etoiles, coquille: violet }
+- id: heure-miroir
+  name: "Heure miroir"
+  description: "Une arrivée réelle à une heure miroir (10 h 10, 21 h 21…)."
+  rarity: common
+  category: nombres
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, motif: eclair, coquille: violet }
+- id: palindrome
+  name: "Palindrome"
+  description: "Une arrivée réelle à une heure palindrome (12 h 21, 13 h 31…)."
+  rarity: common
+  category: nombres
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, motif: damier, coquille: violet }
+- id: jour-de-pi
+  name: "Jour de Pi"
+  description: "Un retard le 14 mars."
+  rarity: common
+  category: nombres
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, motif: etoiles, coquille: nuit }
+- id: la-reponse
+  name: "La Réponse"
+  description: "Un retard de 42 min tout juste."
+  rarity: rare
+  category: nombres
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, cou: cape, decor: etoiles }
+- id: une-minute-pres
+  name: "Une minute près"
+  description: "Un retard de 59 min tout juste."
+  rarity: rare
+  category: nombres
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, motif: eclair, coquille: nuit }
+- id: route-66
+  name: "Route 66"
+  description: "Un retard de 66 min tout juste."
+  rarity: rare
+  category: nombres
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, yeux: soleil, motif: damier }
+- id: suite-logique
+  name: "Suite logique"
+  description: "Trois retards de suite de 5, 10 et 15 min."
+  rarity: rare
+  category: nombres
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, coquille: violet }
+- id: compte-rond
+  name: "Compte rond"
+  description: "Des retards de 10, 20, 30 et 40 min tout juste."
+  rarity: rare
+  category: nombres
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, motif: damier, coquille: nuit }
+- id: midi-pile
+  name: "Midi pile"
+  description: "Une arrivée réelle à 12 h 00 à cause du retard."
+  rarity: rare
+  category: nombres
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, motif: points, decor: etoiles }
+- id: douze-coups-de-minuit
+  name: "Douze coups de minuit"
+  description: "Une arrivée retardée entre 23 h 55 et 0 h 05."
+  rarity: rare
+  category: nombres
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, decor: lune }
+- id: quatre-vingt-huit-a-l-heure
+  name: "Quatre-vingt-huit à l'heure"
+  description: "Un retard de 88 min tout juste."
+  rarity: legendary
+  category: nombres
+  rule: TODO
+  season: null
+  recipe: { expression: presse, motif: eclair, coquille: or, decor: eclairs }
+- id: cent-pour-cent
+  name: "Cent pour cent"
+  description: "Un retard de 100 min tout juste."
+  rarity: legendary
+  category: nombres
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, motif: points, coquille: or }
+- id: minuit-pile
+  name: "Minuit pile"
+  description: "Une arrivée réelle à 0 h 00 à cause du retard."
+  rarity: legendary
+  category: nombres
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, motif: points, coquille: or, decor: lune }
+
+# --- Jours, mois et fêtes ---
+- id: mardi-sans-fin
+  name: "Mardi sans fin"
+  description: "10 retards un mardi."
+  rarity: common
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: etoiles, coquille: violet }
+- id: mercredi-des-enfants
+  name: "Mercredi des enfants"
+  description: "10 retards un mercredi."
+  rarity: common
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: soleil, coquille: menthe }
+- id: jeudi-presse
+  name: "Jeudi pressé"
+  description: "10 retards un jeudi."
+  rarity: common
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: presse, motif: damier, coquille: menthe }
+- id: vendredi-enfin-presque
+  name: "Vendredi, enfin presque"
+  description: "10 retards un vendredi."
+  rarity: common
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: points, coquille: violet }
+- id: samedi-soir-sur-le-quai
+  name: "Samedi soir sur le quai"
+  description: "5 retards un samedi après 18 h."
+  rarity: common
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: endormi, coquille: violet, objet: cafe, decor: lune }
+- id: dimanche-au-ralenti
+  name: "Dimanche au ralenti"
+  description: "5 retards un dimanche."
+  rarity: common
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: points, objet: valise }
+- id: galette-des-rails
+  name: "Galette des rails"
+  description: "Un retard en janvier."
+  rarity: common
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: normal, cou: echarpe, coquille: menthe, decor: neige }
+- id: giboulees-de-mars
+  name: "Giboulées de mars"
+  description: "5 retards en mars."
+  rarity: common
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: blase, coquille: menthe, objet: parapluie, decor: pluie }
+- id: avril-ne-te-decouvre-pas
+  name: "Avril, ne te découvre pas"
+  description: "5 retards en avril."
+  rarity: common
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: eclair, coquille: violet }
+- id: bac-en-retard
+  name: "Bac en retard"
+  description: "Un retard en juin entre 7 h et 9 h."
+  rarity: common
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: damier, coquille: violet }
+- id: juillet-brulant
+  name: "Juillet brûlant"
+  description: "5 retards en juillet."
+  rarity: common
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: soleil, coquille: violet }
+- id: aout-desert
+  name: "Août désert"
+  description: "Un retard en août."
+  rarity: common
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: soleil, coquille: nuit }
+- id: saint-patrick
+  name: "Saint-Patrick"
+  description: "Un retard le 17 mars."
+  rarity: common
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: menthe, decor: confettis }
+- id: oeufs-de-paques
+  name: "Œufs de Pâques"
+  description: "3 retards la semaine de Pâques."
+  rarity: common
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: points, coquille: nuit }
+- id: vacances-de-fevrier
+  name: "Vacances de février"
+  description: "Un retard pendant les vacances d'hiver."
+  rarity: common
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: normal, cou: echarpe, coquille: violet, decor: neige }
+- id: vacances-de-la-toussaint
+  name: "Vacances de la Toussaint"
+  description: "Un retard pendant les vacances de la Toussaint."
+  rarity: common
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: soleil, motif: etoiles }
+- id: changement-d-heure
+  name: "Changement d'heure"
+  description: "Un retard le lundi qui suit un changement d'heure."
+  rarity: common
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: presse, objet: valise }
+- id: premier-jour-des-soldes
+  name: "Premier jour des soldes"
+  description: "Un retard le premier jour des soldes."
+  rarity: common
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, motif: points, decor: confettis }
+- id: jour-ferie
+  name: "Jour férié"
+  description: "Un retard un jour férié."
+  rarity: common
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: violet, decor: confettis }
+- id: chandeleur-du-quai
+  name: "Chandeleur du quai"
+  description: "Un retard le 2 février."
+  rarity: rare
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: nuit, decor: confettis }
+- id: lundi-de-paques
+  name: "Lundi de Pâques"
+  description: "Un retard le lundi de Pâques."
+  rarity: rare
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: rondes, motif: points }
+- id: muguet-en-retard
+  name: "Muguet en retard"
+  description: "Un retard le 1er mai."
+  rarity: rare
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: etoiles, decor: confettis }
+- id: ascension-lente
+  name: "Ascension lente"
+  description: "Un retard le jeudi de l'Ascension."
+  rarity: rare
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: points, decor: confettis }
+- id: lundi-de-pentecote
+  name: "Lundi de Pentecôte"
+  description: "Un retard le lundi de Pentecôte."
+  rarity: rare
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: etoiles, coquille: nuit }
+- id: fete-des-meres
+  name: "Fête des mères"
+  description: "Un retard le jour de la fête des mères."
+  rarity: rare
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: amoureux, coquille: violet, decor: coeurs }
+- id: fete-des-peres
+  name: "Fête des pères"
+  description: "Un retard le jour de la fête des pères."
+  rarity: rare
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: amoureux, coquille: menthe, decor: coeurs }
+- id: fete-de-la-musique
+  name: "Fête de la musique"
+  description: "Un retard le 21 juin après 19 h."
+  rarity: rare
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, objet: guitare, decor: notes }
+- id: solstice-d-ete
+  name: "Solstice d'été"
+  description: "Un retard le jour le plus long de l'année."
+  rarity: rare
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: soleil, motif: points }
+- id: solstice-d-hiver
+  name: "Solstice d'hiver"
+  description: "Un retard le jour le plus court de l'année."
+  rarity: rare
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: normal, cou: echarpe, coquille: nuit, decor: neige }
+- id: feu-d-artifice-rate
+  name: "Feu d'artifice raté"
+  description: "Un retard le 14 juillet après 20 h."
+  rarity: rare
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, decor: confettis }
+- id: pont-du-15-aout
+  name: "Pont du 15 août"
+  description: "Un retard le 15 août."
+  rarity: rare
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: soleil, decor: confettis }
+- id: citrouille-en-retard
+  name: "Citrouille en retard"
+  description: "Un retard le 31 octobre après 18 h."
+  rarity: rare
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: blase, motif: etoiles, coquille: nuit, decor: lune }
+- id: beaujolais-nouveau
+  name: "Beaujolais nouveau"
+  description: "Un retard le troisième jeudi de novembre."
+  rarity: rare
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: eclair, decor: confettis }
+- id: calendrier-de-l-avent
+  name: "Calendrier de l'Avent"
+  description: "Au moins un retard chaque semaine de décembre."
+  rarity: rare
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, cou: echarpe, decor: neige }
+- id: anniversaire-gache
+  name: "Anniversaire gâché"
+  description: "Un retard le jour de son anniversaire (date facultative dans le profil)."
+  rarity: rare
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: damier, decor: confettis }
+- id: reveillon-sur-le-quai
+  name: "Réveillon sur le quai"
+  description: "Un retard le 31 décembre après 18 h."
+  rarity: legendary
+  category: calendrier
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: noeud, coquille: or, decor: confettis }
+
+# --- Régions et grandes gares ---
+- id: fondue-sur-le-quai
+  name: "Fondue sur le quai"
+  description: "5 retards en Auvergne-Rhône-Alpes."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, cou: echarpe, motif: etoiles, decor: neige }
+- id: comte-affine
+  name: "Comté affiné"
+  description: "5 retards en Bourgogne-Franche-Comté."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: eclair, objet: valise }
+- id: crepe-refroidie
+  name: "Crêpe refroidie"
+  description: "5 retards en Bretagne."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: blase, coquille: nuit, objet: parapluie, decor: pluie }
+- id: chateau-d-attente
+  name: "Château d'attente"
+  description: "5 retards en Centre-Val de Loire."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: damier, objet: valise }
+- id: choucroute-garnie
+  name: "Choucroute garnie"
+  description: "5 retards dans le Grand Est."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: rondes, objet: valise }
+- id: frites-froides
+  name: "Frites froides"
+  description: "5 retards dans les Hauts-de-France."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, cou: echarpe, objet: valise, decor: neige }
+- id: parisien-presse
+  name: "Parisien pressé"
+  description: "5 retards en Île-de-France."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: presse, motif: damier, objet: cafe }
+- id: camembert-coulant
+  name: "Camembert coulant"
+  description: "5 retards en Normandie."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: soleil, objet: valise }
+- id: canele-rassis
+  name: "Canelé rassis"
+  description: "5 retards en Nouvelle-Aquitaine."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: monocle, objet: valise }
+- id: cassoulet-mijote
+  name: "Cassoulet mijoté"
+  description: "5 retards en Occitanie."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: 3d, objet: valise }
+- id: petit-beurre-trempe
+  name: "Petit-beurre trempé"
+  description: "5 retards en Pays de la Loire."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: etoiles, coquille: menthe, objet: valise }
+- id: bouillabaisse-froide
+  name: "Bouillabaisse froide"
+  description: "5 retards en Provence-Alpes-Côte d'Azur."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: soleil, motif: eclair }
+- id: pilier-de-montparnasse
+  name: "Pilier de Montparnasse"
+  description: "10 retards à Paris-Montparnasse."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: points, coquille: menthe, objet: valise }
+- id: horloge-de-lyon
+  name: "Horloge de Lyon"
+  description: "10 retards à Paris-Gare de Lyon."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: eclair, coquille: menthe, objet: valise }
+- id: impressionniste
+  name: "Impressionniste"
+  description: "10 retards à Paris-Saint-Lazare."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: rondes, motif: points, coquille: menthe }
+- id: ch-ti-du-quai
+  name: "Ch'ti du quai"
+  description: "10 retards à Paris-Nord."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: damier, coquille: menthe, objet: valise }
+- id: cap-a-l-est
+  name: "Cap à l'Est"
+  description: "10 retards à Paris-Est."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: etoiles, coquille: violet, objet: valise }
+- id: bataille-d-austerlitz
+  name: "Bataille d'Austerlitz"
+  description: "10 retards à Paris-Austerlitz."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: blase, cou: cape }
+- id: rive-de-bercy
+  name: "Rive de Bercy"
+  description: "10 retards à Paris-Bercy."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: points, coquille: violet, objet: valise }
+- id: crayon-de-part-dieu
+  name: "Crayon de Part-Dieu"
+  description: "10 retards à Lyon-Part-Dieu."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: eclair, coquille: violet, objet: valise }
+- id: escalier-de-saint-charles
+  name: "Escalier de Saint-Charles"
+  description: "10 retards à Marseille-Saint-Charles."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: damier, coquille: violet, objet: valise }
+- id: grand-cru-saint-jean
+  name: "Grand cru Saint-Jean"
+  description: "10 retards à Bordeaux-Saint-Jean."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: etoiles, coquille: nuit, objet: valise }
+- id: ville-rose
+  name: "Ville rose"
+  description: "10 retards à Toulouse-Matabiau."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: amoureux, coquille: nuit, decor: coeurs }
+- id: beffroi
+  name: "Beffroi"
+  description: "10 retards à Lille-Flandres ou Lille-Europe."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: points, coquille: nuit, objet: valise }
+- id: bulle-de-verre
+  name: "Bulle de verre"
+  description: "10 retards à Strasbourg."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: eclair, coquille: nuit, objet: valise }
+- id: bord-de-loire
+  name: "Bord de Loire"
+  description: "10 retards à Nantes."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: damier, coquille: nuit, objet: valise }
+- id: rennes-du-quai
+  name: "Rennes du quai"
+  description: "10 retards à Rennes."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, objet: valise, decor: etoiles }
+- id: promenade-forcee
+  name: "Promenade forcée"
+  description: "10 retards à Nice-Ville."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: blase, yeux: soleil, coquille: nuit }
+- id: ecusson
+  name: "Écusson"
+  description: "10 retards à Montpellier-Saint-Roch."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, objet: valise, decor: confettis }
+- id: bulles-de-grenoble
+  name: "Bulles de Grenoble"
+  description: "10 retards à Grenoble."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, objet: valise, decor: notes }
+- id: clocher-de-rouen
+  name: "Clocher de Rouen"
+  description: "10 retards à Rouen-Rive-Droite."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, objet: valise, decor: coeurs }
+- id: moutarde-au-nez
+  name: "Moutarde au nez"
+  description: "10 retards à Dijon-Ville."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: menthe, objet: valise, decor: etoiles }
+- id: tour-de-tours
+  name: "Tour de Tours"
+  description: "10 retards à Tours."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: menthe, objet: valise, decor: confettis }
+- id: vitraux-de-metz
+  name: "Vitraux de Metz"
+  description: "10 retards à Metz-Ville."
+  rarity: common
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: menthe, objet: valise, decor: notes }
+- id: frontalier
+  name: "Frontalier"
+  description: "Un retard sur un train qui passe une frontière."
+  rarity: rare
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: violet, objet: valise, decor: etoiles }
+- id: littoral
+  name: "Littoral"
+  description: "Un retard dans une gare à moins de 5 km de la mer."
+  rarity: rare
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, yeux: soleil, motif: points, coquille: menthe }
+- id: montagnard
+  name: "Montagnard"
+  description: "Un retard dans une gare à plus de 1 000 m d'altitude."
+  rarity: rare
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, cou: echarpe, motif: points, decor: neige }
+- id: petite-gare
+  name: "Petite gare"
+  description: "Un retard dans une gare de moins de 1 000 voyageurs par jour."
+  rarity: rare
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: violet, objet: valise, decor: confettis }
+- id: gare-de-campagne
+  name: "Gare de campagne"
+  description: "10 retards dans des petites gares."
+  rarity: rare
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: violet, objet: valise, decor: notes }
+- id: grand-hall
+  name: "Grand hall"
+  description: "50 retards dans les grandes gares de cette liste."
+  rarity: rare
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: violet, objet: valise, decor: coeurs }
+- id: touriste
+  name: "Touriste"
+  description: "Des retards dans 3 régions le même mois."
+  rarity: rare
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: menthe, objet: valise, decor: coeurs }
+- id: capitale
+  name: "Capitale"
+  description: "Des retards dans 3 gares parisiennes le même jour."
+  rarity: rare
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: nuit, objet: cafe }
+- id: parisien-de-toutes-les-gares
+  name: "Parisien de toutes les gares"
+  description: "Des retards dans les 7 grandes gares parisiennes."
+  rarity: legendary
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, coquille: or, objet: cafe }
+- id: tour-des-metropoles
+  name: "Tour des métropoles"
+  description: "Des retards dans 10 grandes gares de cette liste."
+  rarity: legendary
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, coquille: nuit, objet: valise }
+- id: hexagone-complet
+  name: "Hexagone complet"
+  description: "Des retards dans les 12 régions continentales."
+  rarity: legendary
+  category: regions
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, coquille: violet, objet: valise }
+
+# --- Types de train ---
+- id: presse-de-nature
+  name: "Pressé de nature"
+  description: "5 retards en TGV."
+  rarity: common
+  category: types
+  rule: TODO
+  season: null
+  recipe: { expression: presse, motif: damier, coquille: violet }
+- id: grand-voyageur
+  name: "Grand voyageur"
+  description: "10 retards en TGV."
+  rarity: common
+  category: types
+  rule: TODO
+  season: null
+  recipe: { expression: presse, motif: damier, objet: valise }
+- id: fidele-du-ter
+  name: "Fidèle du TER"
+  description: "50 retards en TER."
+  rarity: common
+  category: types
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: eclair, coquille: nuit }
+- id: entre-deux-villes
+  name: "Entre deux villes"
+  description: "15 retards en Intercités."
+  rarity: common
+  category: types
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: damier, coquille: nuit }
+- id: francilien-endurci
+  name: "Francilien endurci"
+  description: "50 retards en RER ou Transilien."
+  rarity: common
+  category: types
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: etoiles, objet: cafe }
+- id: couchette
+  name: "Couchette"
+  description: "Un retard en train de nuit."
+  rarity: common
+  category: types
+  rule: TODO
+  season: null
+  recipe: { expression: normal, decor: lune }
+- id: remplace-par-un-car
+  name: "Remplacé par un car"
+  description: "Un retard sur un autocar TER."
+  rarity: common
+  category: types
+  rule: TODO
+  season: null
+  recipe: { expression: normal, decor: etoiles }
+- id: premier-de-chaque
+  name: "Premier de chaque"
+  description: "Un premier retard sur un type de train jamais pris."
+  rarity: common
+  category: types
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, motif: points, decor: zzz }
+- id: vitesse-de-croisiere
+  name: "Vitesse de croisière"
+  description: "25 retards en TGV."
+  rarity: rare
+  category: types
+  rule: TODO
+  season: null
+  recipe: { expression: presse, motif: damier, coquille: nuit }
+- id: ter-a-vie
+  name: "TER à vie"
+  description: "100 retards en TER."
+  rarity: rare
+  category: types
+  rule: TODO
+  season: null
+  recipe: { expression: normal, decor: coeurs }
+- id: intercites-au-long-cours
+  name: "Intercités au long cours"
+  description: "30 retards en Intercités."
+  rarity: rare
+  category: types
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: rondes, motif: eclair }
+- id: banlieusard-d-honneur
+  name: "Banlieusard d'honneur"
+  description: "100 retards en RER ou Transilien."
+  rarity: rare
+  category: types
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: points, objet: cafe }
+- id: noctambule-ferroviaire
+  name: "Noctambule ferroviaire"
+  description: "5 retards en train de nuit."
+  rarity: rare
+  category: types
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: violet, decor: lune }
+- id: tram-train
+  name: "Tram-train"
+  description: "Un retard sur un tram-train."
+  rarity: rare
+  category: types
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: violet, decor: etoiles }
+- id: touche-a-tout
+  name: "Touche-à-tout"
+  description: "Des retards sur 3 types de train dans la même semaine."
+  rarity: rare
+  category: types
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: violet, decor: coeurs }
+- id: double-vie
+  name: "Double vie"
+  description: "10 retards en TER et 10 en TGV."
+  rarity: rare
+  category: types
+  rule: TODO
+  season: null
+  recipe: { expression: presse, motif: etoiles }
+- id: grande-vitesse-grande-patience
+  name: "Grande vitesse, grande patience"
+  description: "50 retards en TGV."
+  rarity: legendary
+  category: types
+  rule: TODO
+  season: null
+  recipe: { expression: presse, motif: damier, coquille: or }
+- id: legende-regionale
+  name: "Légende régionale"
+  description: "200 retards en TER."
+  rarity: legendary
+  category: types
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: points, coquille: or, objet: valise }
+- id: roi-du-rer
+  name: "Roi du RER"
+  description: "200 retards en RER ou Transilien."
+  rarity: legendary
+  category: types
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: or, objet: cafe }
+- id: nuit-blanche
+  name: "Nuit blanche"
+  description: "Un retard de 2 h ou plus en train de nuit."
+  rarity: legendary
+  category: types
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: or, decor: lune }
+
+# --- Distances et parcours ---
+- id: saut-de-puce
+  name: "Saut de puce"
+  description: "Un retard sur un trajet de moins de 10 km."
+  rarity: common
+  category: distances
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: nuit, objet: valise, decor: etoiles }
+- id: grand-voyage
+  name: "Grand voyage"
+  description: "Un retard sur un trajet de plus de 500 km."
+  rarity: common
+  category: distances
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: nuit, objet: valise, decor: confettis }
+- id: mille-kilometres
+  name: "Mille kilomètres"
+  description: "1 000 km parcourus au total."
+  rarity: common
+  category: distances
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: nuit, objet: valise, decor: notes }
+- id: cinq-mille
+  name: "Cinq mille"
+  description: "5 000 km parcourus au total."
+  rarity: common
+  category: distances
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: nuit, objet: valise, decor: coeurs }
+- id: distance-record
+  name: "Distance record"
+  description: "Battre son trajet le plus long."
+  rarity: common
+  category: distances
+  rule: TODO
+  season: null
+  recipe: { expression: normal, objet: trophee }
+- id: aller-simple
+  name: "Aller simple"
+  description: "Un retard sur un trajet jamais fait avant."
+  rarity: common
+  category: distances
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, objet: valise }
+- id: retour-au-bercail
+  name: "Retour au bercail"
+  description: "Un retard au retour après un aller à l'heure."
+  rarity: common
+  category: distances
+  rule: TODO
+  season: null
+  recipe: { expression: blase, objet: valise, decor: etoiles }
+- id: kilometrage-du-jour
+  name: "Kilométrage du jour"
+  description: "Plus de 300 km dans la journée, avec au moins un retard."
+  rarity: common
+  category: distances
+  rule: TODO
+  season: null
+  recipe: { expression: blase, motif: etoiles, objet: valise }
+- id: arret-apres-arret
+  name: "Arrêt après arrêt"
+  description: "Un retard sur un trajet de plus de 15 arrêts."
+  rarity: common
+  category: distances
+  rule: TODO
+  season: null
+  recipe: { expression: blase, motif: points, objet: valise }
+- id: direct
+  name: "Direct"
+  description: "Un retard sur un trajet sans arrêt intermédiaire."
+  rarity: common
+  category: distances
+  rule: TODO
+  season: null
+  recipe: { expression: blase, motif: eclair, objet: valise }
+- id: plus-long-que-le-voyage
+  name: "Plus long que le voyage"
+  description: "Un retard plus long que la durée prévue du trajet."
+  rarity: rare
+  category: distances
+  rule: TODO
+  season: null
+  recipe: { expression: blase, motif: etoiles, coquille: violet, objet: valise }
+- id: petit-trajet-gros-retard
+  name: "Petit trajet, gros retard"
+  description: "Un retard de 30 min ou plus sur un trajet de moins de 20 km."
+  rarity: rare
+  category: distances
+  rule: TODO
+  season: null
+  recipe: { expression: blase, motif: points, coquille: violet, objet: valise }
+- id: bout-du-pays
+  name: "Bout du pays"
+  description: "Un retard sur un trajet de plus de 800 km."
+  rarity: rare
+  category: distances
+  rule: TODO
+  season: null
+  recipe: { expression: blase, motif: eclair, coquille: violet, objet: valise }
+- id: dix-mille-bornes
+  name: "Dix mille bornes"
+  description: "10 000 km parcourus au total."
+  rarity: rare
+  category: distances
+  rule: TODO
+  season: null
+  recipe: { expression: blase, motif: damier, coquille: violet, objet: valise }
+- id: minute-au-kilometre
+  name: "Minute au kilomètre"
+  description: "Plus de minutes de retard que de kilomètres parcourus."
+  rarity: rare
+  category: distances
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, motif: points, coquille: violet, objet: valise }
+- id: trajet-favori
+  name: "Trajet favori"
+  description: "100 trajets sur le même parcours."
+  rarity: rare
+  category: distances
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: rondes, coquille: violet, objet: valise }
+- id: sens-unique
+  name: "Sens unique"
+  description: "10 retards dans un sens et aucun dans l'autre sur un mois."
+  rarity: rare
+  category: distances
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, motif: etoiles, coquille: violet, objet: valise }
+- id: double-navette
+  name: "Double navette"
+  description: "Deux parcours réguliers avec au moins 10 retards chacun."
+  rarity: rare
+  category: distances
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: rondes, coquille: menthe, objet: valise }
+- id: deux-fois-plus-long
+  name: "Deux fois plus long"
+  description: "Un retard deux fois plus long que le trajet prévu."
+  rarity: legendary
+  category: distances
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, coquille: menthe, objet: valise }
+- id: trajet-legendaire
+  name: "Trajet légendaire"
+  description: "300 trajets sur le même parcours."
+  rarity: legendary
+  category: distances
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, yeux: rondes, coquille: or, objet: valise }
+- id: tour-de-la-terre
+  name: "Tour de la Terre"
+  description: "40 075 km parcourus au total."
+  rarity: legendary
+  category: distances
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, motif: anneau, coquille: or, objet: valise }
+- id: vers-la-lune
+  name: "Vers la Lune"
+  description: "384 400 km parcourus au total."
+  rarity: legendary
+  category: distances
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, motif: anneau, coquille: or, decor: lune }
+
+# --- Correspondances ---
+- id: correspondance-tenue
+  name: "Correspondance tenue"
+  description: "Une correspondance attrapée malgré un premier train en retard."
+  rarity: common
+  category: correspondances
+  rule: TODO
+  season: null
+  recipe: { expression: presse, motif: points, coquille: menthe, objet: valise }
+- id: rattrape-de-justesse
+  name: "Rattrapé de justesse"
+  description: "Deux trains en retard, correspondance tenue quand même."
+  rarity: common
+  category: correspondances
+  rule: TODO
+  season: null
+  recipe: { expression: presse, coquille: menthe, objet: valise }
+- id: triple-correspondance
+  name: "Triple correspondance"
+  description: "Un voyage avec 3 correspondances et au moins un retard."
+  rarity: common
+  category: correspondances
+  rule: TODO
+  season: null
+  recipe: { expression: presse, coquille: violet, objet: valise }
+- id: deuxieme-chance
+  name: "Deuxième chance"
+  description: "Une correspondance ratée, puis le train suivant à l'heure."
+  rarity: common
+  category: correspondances
+  rule: TODO
+  season: null
+  recipe: { expression: presse, objet: valise, decor: etoiles }
+- id: collectionneur-de-quais
+  name: "Collectionneur de quais"
+  description: "10 correspondances avec un retard."
+  rarity: common
+  category: correspondances
+  rule: TODO
+  season: null
+  recipe: { expression: presse, cou: medaille, objet: valise }
+- id: hub
+  name: "Hub"
+  description: "Des correspondances dans 5 gares différentes."
+  rarity: common
+  category: correspondances
+  rule: TODO
+  season: null
+  recipe: { expression: presse, coquille: nuit, objet: valise }
+- id: sprint-en-gare
+  name: "Sprint en gare"
+  description: "Une correspondance attrapée avec moins de 3 min de marge."
+  rarity: rare
+  category: correspondances
+  rule: TODO
+  season: null
+  recipe: { expression: presse, motif: damier, coquille: violet, objet: valise }
+- id: trois-trains-trois-retards
+  name: "Trois trains, trois retards"
+  description: "Un voyage en 3 trains, tous en retard."
+  rarity: rare
+  category: correspondances
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, motif: eclair, coquille: violet, objet: valise }
+- id: habitue-des-changements
+  name: "Habitué des changements"
+  description: "50 correspondances enregistrées."
+  rarity: rare
+  category: correspondances
+  rule: TODO
+  season: null
+  recipe: { expression: presse, motif: etoiles, objet: valise }
+- id: attente-interminable
+  name: "Attente interminable"
+  description: "Plus d'une heure d'attente après une correspondance ratée."
+  rarity: rare
+  category: correspondances
+  rule: TODO
+  season: null
+  recipe: { expression: presse, motif: eclair, objet: valise }
+- id: changement-de-plan
+  name: "Changement de plan"
+  description: "Une correspondance ratée qui oblige à changer de type de train."
+  rarity: rare
+  category: correspondances
+  rule: TODO
+  season: null
+  recipe: { expression: presse, yeux: rondes, objet: valise }
+- id: bon-timing
+  name: "Bon timing"
+  description: "10 correspondances tenues de suite."
+  rarity: rare
+  category: correspondances
+  rule: TODO
+  season: null
+  recipe: { expression: presse, yeux: soleil, objet: valise }
+- id: marathon-de-gare
+  name: "Marathon de gare"
+  description: "3 correspondances ratées dans le même mois."
+  rarity: rare
+  category: correspondances
+  rule: TODO
+  season: null
+  recipe: { expression: presse, cou: medaille, coquille: violet, objet: valise }
+- id: effet-domino
+  name: "Effet domino"
+  description: "Deux correspondances ratées dans le même voyage."
+  rarity: legendary
+  category: correspondances
+  rule: TODO
+  season: null
+  recipe: { expression: presse, coquille: or, objet: valise }
+- id: voyage-epique
+  name: "Voyage épique"
+  description: "Un voyage de plus de 6 h avec 2 correspondances et un retard."
+  rarity: legendary
+  category: correspondances
+  rule: TODO
+  season: null
+  recipe: { expression: presse, motif: etoiles, coquille: or, objet: valise }
+
+# --- À l'heure, pour une fois ---
+- id: pile-poil
+  name: "Pile poil"
+  description: "Un trajet à l'heure."
+  rarity: common
+  category: alheure
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, motif: points, coquille: menthe, decor: etoiles }
+- id: bonne-surprise
+  name: "Bonne surprise"
+  description: "Un train arrivé en avance."
+  rarity: common
+  category: alheure
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, coquille: violet, decor: etoiles }
+- id: bonne-etoile
+  name: "Bonne étoile"
+  description: "5 trajets à l'heure de suite."
+  rarity: common
+  category: alheure
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, coquille: nuit, decor: etoiles }
+- id: lundi-parfait
+  name: "Lundi parfait"
+  description: "Un lundi avec tous ses trajets à l'heure."
+  rarity: common
+  category: alheure
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, motif: etoiles, decor: etoiles }
+- id: contre-toute-attente
+  name: "Contre toute attente"
+  description: "Un trajet à l'heure sur sa ligne la plus en retard."
+  rarity: common
+  category: alheure
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, motif: coeurs, decor: etoiles }
+- id: retour-au-calme
+  name: "Retour au calme"
+  description: "Un mois avec moitié moins de retard que le précédent."
+  rarity: common
+  category: alheure
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, motif: eclair, decor: etoiles }
+- id: ciel-degage
+  name: "Ciel dégagé"
+  description: "Une journée d'au moins 3 trajets, tous à l'heure."
+  rarity: common
+  category: alheure
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, motif: damier, decor: etoiles }
+- id: semaine-parfaite
+  name: "Semaine parfaite"
+  description: "Une semaine d'au moins 5 trajets, tous à l'heure."
+  rarity: rare
+  category: alheure
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, yeux: rondes, decor: etoiles }
+- id: ponctualite-suisse
+  name: "Ponctualité suisse"
+  description: "20 trajets à l'heure sur 30."
+  rarity: rare
+  category: alheure
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, yeux: soleil, decor: etoiles }
+- id: avance-rapide
+  name: "Avance rapide"
+  description: "Un train arrivé avec 5 min d'avance ou plus."
+  rarity: rare
+  category: alheure
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, yeux: monocle, decor: etoiles }
+- id: chanceux
+  name: "Chanceux"
+  description: "Un trajet à l'heure un jour de perturbations signalées sur la ligne."
+  rarity: rare
+  category: alheure
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, yeux: 3d, decor: etoiles }
+- id: zen-a-quai
+  name: "Zen à quai"
+  description: "50 trajets à l'heure dans l'année."
+  rarity: rare
+  category: alheure
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: menthe, decor: etoiles }
+- id: cent-fois-a-l-heure
+  name: "Cent fois à l'heure"
+  description: "100 trajets à l'heure au total."
+  rarity: rare
+  category: alheure
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, motif: etoiles, coquille: violet, decor: etoiles }
+- id: trimestre-serein
+  name: "Trimestre serein"
+  description: "Moins de 30 min de retard sur un trimestre, au moins 30 trajets."
+  rarity: legendary
+  category: alheure
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, coquille: or, decor: etoiles }
+- id: ponctuel-de-coeur
+  name: "Ponctuel de cœur"
+  description: "500 trajets à l'heure au total."
+  rarity: legendary
+  category: alheure
+  rule: TODO
+  season: null
+  recipe: { expression: amoureux, motif: coeurs, coquille: or }
+
+# --- Météo et ciel ---
+- id: coup-de-vent
+  name: "Coup de vent"
+  description: "Un retard par vent de plus de 60 km/h."
+  rarity: common
+  category: meteo
+  rule: TODO
+  season: null
+  requires: [meteo]
+  recipe: { expression: surpris, cou: cape, objet: valise }
+- id: orage
+  name: "Orage"
+  description: "Un retard un jour d'orage."
+  rarity: common
+  category: meteo
+  rule: TODO
+  season: null
+  requires: [meteo]
+  recipe: { expression: surpris, coquille: menthe, decor: eclairs }
+- id: grand-froid
+  name: "Grand froid"
+  description: "Un retard par moins de 0 °C."
+  rarity: common
+  category: meteo
+  rule: TODO
+  season: null
+  requires: [meteo]
+  recipe: { expression: normal, cou: echarpe, motif: eclair, decor: neige }
+- id: coup-de-chaud
+  name: "Coup de chaud"
+  description: "Un retard par plus de 30 °C."
+  rarity: common
+  category: meteo
+  rule: TODO
+  season: null
+  requires: [meteo]
+  recipe: { expression: normal, yeux: soleil, motif: damier }
+- id: pluie-battante
+  name: "Pluie battante"
+  description: "10 retards un jour de pluie."
+  rarity: common
+  category: meteo
+  rule: TODO
+  season: null
+  requires: [meteo]
+  recipe: { expression: blase, motif: etoiles, objet: parapluie, decor: pluie }
+- id: arc-en-ciel
+  name: "Arc-en-ciel"
+  description: "Un retard un jour de pluie et de soleil."
+  rarity: common
+  category: meteo
+  rule: TODO
+  season: null
+  requires: [meteo]
+  recipe: { expression: victoire, yeux: soleil, objet: parapluie, decor: pluie }
+- id: pleine-lune
+  name: "Pleine lune"
+  description: "Un retard un soir de pleine lune."
+  rarity: common
+  category: meteo
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: menthe, decor: lune }
+- id: nouvelle-lune
+  name: "Nouvelle lune"
+  description: "Un retard un soir de nouvelle lune."
+  rarity: common
+  category: meteo
+  rule: TODO
+  season: null
+  recipe: { expression: normal, coquille: nuit, decor: lune }
+- id: lever-de-soleil
+  name: "Lever de soleil"
+  description: "Un trajet en retard pendant le lever du soleil."
+  rarity: common
+  category: meteo
+  rule: TODO
+  season: null
+  recipe: { expression: endormi, yeux: soleil, objet: cafe }
+- id: coucher-de-soleil
+  name: "Coucher de soleil"
+  description: "Un trajet en retard pendant le coucher du soleil."
+  rarity: common
+  category: meteo
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: soleil, decor: lune }
+- id: tempete
+  name: "Tempête"
+  description: "Un retard par vent de plus de 100 km/h."
+  rarity: rare
+  category: meteo
+  rule: TODO
+  season: null
+  requires: [meteo]
+  recipe: { expression: surpris, cou: cape, coquille: violet, objet: valise }
+- id: grelon
+  name: "Grêlon"
+  description: "Un retard un jour de grêle."
+  rarity: rare
+  category: meteo
+  rule: TODO
+  season: null
+  requires: [meteo]
+  recipe: { expression: surpris, coquille: violet, decor: eclairs }
+- id: premiere-neige
+  name: "Première neige"
+  description: "Un retard le jour de la première neige de l'hiver."
+  rarity: rare
+  category: meteo
+  rule: TODO
+  season: null
+  requires: [meteo]
+  recipe: { expression: normal, cou: echarpe, motif: damier, decor: neige }
+- id: vigilance-orange
+  name: "Vigilance orange"
+  description: "Un retard un jour de vigilance météo orange ou rouge."
+  rarity: rare
+  category: meteo
+  rule: TODO
+  season: null
+  requires: [meteo]
+  recipe: { expression: surpris, yeux: soleil, decor: eclairs }
+- id: banquise
+  name: "Banquise"
+  description: "Un retard par moins de −10 °C."
+  rarity: legendary
+  category: meteo
+  rule: TODO
+  season: null
+  requires: [meteo]
+  recipe: { expression: victoire, cou: echarpe, coquille: or, decor: neige }
+- id: fournaise
+  name: "Fournaise"
+  description: "Un retard par plus de 40 °C."
+  rarity: legendary
+  category: meteo
+  rule: TODO
+  season: null
+  requires: [meteo]
+  recipe: { expression: victoire, yeux: soleil, coquille: or }
+- id: eclipse
+  name: "Éclipse"
+  description: "Un retard un jour d'éclipse visible en France."
+  rarity: legendary
+  category: meteo
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, yeux: soleil, coquille: nuit, decor: lune }
+- id: toutes-les-meteos
+  name: "Toutes les météos"
+  description: "Des retards sous la pluie, la neige, plus de 30 °C et moins de 0 °C."
+  rarity: legendary
+  category: meteo
+  rule: TODO
+  season: null
+  requires: [meteo]
+  recipe: { expression: blase, cou: echarpe, coquille: or, objet: parapluie, decor: pluie }
+
+# --- Pop culture, cinéma et séries ---
+- id: les-temps-modernes
+  name: "Les Temps modernes"
+  description: "5 retards à l'heure de pointe dans la même semaine."
+  rarity: common
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: presse, yeux: rondes, objet: cafe }
+- id: les-visiteurs-du-quai
+  name: "Les Visiteurs du quai"
+  description: "Un retard sur une ligne jamais prise avant."
+  rarity: common
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, objet: valise, decor: eclairs }
+- id: le-diner-de-quais
+  name: "Le Dîner de quais"
+  description: "Un retard sur un train arrivé entre 19 h et 21 h un vendredi."
+  rarity: common
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: monocle, cou: noeud }
+- id: le-grand-bleu
+  name: "Le Grand Bleu"
+  description: "Un retard dans une gare en bord de mer, en été."
+  rarity: common
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: soleil, motif: points, coquille: menthe }
+- id: telephone-maison
+  name: "Téléphone maison"
+  description: "Un retard de 30 min ou plus après 20 h."
+  rarity: common
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, motif: points, decor: lune }
+- id: le-retour-du-quai
+  name: "Le Retour du quai"
+  description: "Reprendre le train après un mois sans trajet."
+  rarity: common
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, motif: coeurs, objet: valise }
+- id: le-reveil-du-retard
+  name: "Le Réveil du retard"
+  description: "Un retard sur un train parti avant 6 h un lundi."
+  rarity: common
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: endormi, coquille: menthe, objet: cafe, decor: zzz }
+- id: boite-de-chocolats
+  name: "Boîte de chocolats"
+  description: "10 retards de durées toutes différentes dans le mois."
+  rarity: common
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: normal, motif: coeurs }
+- id: il-etait-une-fois-dans-l-ouest
+  name: "Il était une fois dans l'Ouest"
+  description: "5 retards en Bretagne, Pays de la Loire ou Nouvelle-Aquitaine."
+  rarity: common
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: blase, cou: sherif, decor: notes }
+- id: un-train-peut-en-cacher-un-autre
+  name: "Un train peut en cacher un autre"
+  description: "Deux trains de suite en retard sur la même ligne le même jour."
+  rarity: common
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, yeux: rondes }
+- id: le-monde-a-l-envers
+  name: "Le Monde à l'envers"
+  description: "Un train en avance juste après un retard de 30 min ou plus."
+  rarity: common
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, decor: etoiles }
+- id: bureau-en-retard
+  name: "Bureau en retard"
+  description: "20 retards entre 8 h et 9 h 30."
+  rarity: common
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: presse, yeux: rondes, cou: noeud, objet: cafe }
+- id: chantons-sous-la-pluie
+  name: "Chantons sous la pluie"
+  description: "3 retards sous la pluie dans la même semaine."
+  rarity: common
+  category: cinema
+  rule: TODO
+  season: null
+  requires: [meteo]
+  recipe: { expression: victoire, objet: parapluie, decor: pluie }
+- id: hotel-du-nord
+  name: "Hôtel du Nord"
+  description: "20 retards à Paris-Nord."
+  rarity: common
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: endormi, cou: echarpe, objet: valise }
+- id: les-demoiselles-de-rochefort
+  name: "Les Demoiselles de Rochefort"
+  description: "Un retard à Rochefort."
+  rarity: common
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: fleurs, decor: notes }
+- id: rien-a-declarer
+  name: "Rien à déclarer"
+  description: "Un retard sur un train vers la Belgique."
+  rarity: common
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: blase, coquille: menthe, objet: valise }
+- id: camping
+  name: "Camping"
+  description: "Un retard en août dans une gare en bord de mer."
+  rarity: common
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, yeux: soleil, objet: cafe, decor: etoiles }
+- id: la-grande-vadrouille
+  name: "La Grande Vadrouille"
+  description: "Des retards dans 3 régions la même semaine."
+  rarity: rare
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: presse, cou: echarpe, coquille: violet, objet: valise }
+- id: la-vie-est-un-long-fleuve-tranquille
+  name: "La vie est un long fleuve tranquille"
+  description: "Moins de 15 min de retard sur un mois, au moins 15 trajets."
+  rarity: rare
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: monocle, coquille: menthe }
+- id: le-pere-noel-est-un-retardataire
+  name: "Le Père Noël est un retardataire"
+  description: "Un retard sur un train arrivé après 22 h le 24 décembre."
+  rarity: rare
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: blase, cou: echarpe, decor: neige }
+- id: taxi
+  name: "Taxi !"
+  description: "Un retard d'une heure ou plus après 22 h."
+  rarity: rare
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: presse, yeux: soleil, motif: damier, decor: lune }
+- id: le-silence-des-quais
+  name: "Le Silence des quais"
+  description: "Un retard après 23 h sur un trajet de plus d'une heure."
+  rarity: rare
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: endormi, coquille: nuit, decor: lune }
+- id: autant-en-emporte-le-vent
+  name: "Autant en emporte le vent"
+  description: "Un retard par vent de plus de 80 km/h."
+  rarity: rare
+  category: cinema
+  rule: TODO
+  season: null
+  requires: [meteo]
+  recipe: { expression: surpris, cou: cape }
+- id: la-menace-fantome
+  name: "La Menace fantôme"
+  description: "3 trains supprimés dans la même semaine."
+  rarity: rare
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, cou: cape, coquille: violet, decor: etoiles }
+- id: le-prisonnier-du-quai
+  name: "Le Prisonnier du quai"
+  description: "Plus de 45 min d'attente en gare avant le départ."
+  rarity: rare
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: blase, motif: points, decor: zzz }
+- id: la-communaute-du-quai
+  name: "La Communauté du quai"
+  description: "Le même train en retard que 10 autres utilisateurs."
+  rarity: rare
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: cape, motif: anneau, coquille: violet }
+- id: les-deux-tours
+  name: "Les Deux Tours"
+  description: "Des retards à Tours et à Saint-Pierre-des-Corps le même mois."
+  rarity: rare
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, yeux: rondes, motif: etoiles }
+- id: les-evades
+  name: "Les Évadés"
+  description: "Un trajet à l'heure après 10 retards de suite."
+  rarity: rare
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, decor: pluie }
+- id: la-bete-humaine
+  name: "La Bête humaine"
+  description: "10 retards de 30 min ou plus dans l'année."
+  rarity: rare
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: blase, coquille: nuit, decor: eclairs }
+- id: perdus-en-gare
+  name: "Perdus en gare"
+  description: "Une correspondance ratée dans une gare jamais visitée."
+  rarity: rare
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, objet: valise, decor: lune }
+- id: la-cite-de-la-peur
+  name: "La Cité de la peur"
+  description: "Un retard à Cannes pendant le festival de cinéma."
+  rarity: rare
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, yeux: soleil, objet: popcorn }
+- id: le-cercle-des-voyageurs-disparus
+  name: "Le Cercle des voyageurs disparus"
+  description: "5 trains supprimés dans le même mois."
+  rarity: rare
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: rondes, cou: noeud, decor: etoiles }
+- id: les-parapluies-de-cherbourg
+  name: "Les Parapluies de Cherbourg"
+  description: "Un retard à Cherbourg un jour de pluie."
+  rarity: rare
+  category: cinema
+  rule: TODO
+  season: null
+  requires: [meteo]
+  recipe: { expression: amoureux, objet: parapluie, decor: pluie }
+- id: l-arrivee-d-un-train
+  name: "L'Arrivée d'un train"
+  description: "Un retard à La Ciotat."
+  rarity: rare
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, yeux: 3d, objet: popcorn }
+- id: le-corniaud
+  name: "Le Corniaud"
+  description: "Un retard sur un train vers l'Italie."
+  rarity: rare
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: soleil, cou: echarpe, objet: valise }
+- id: intouchable
+  name: "Intouchable"
+  description: "1er de sa ligne 3 mois de suite."
+  rarity: legendary
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, yeux: soleil, cou: noeud, coquille: or }
+- id: titanesque
+  name: "Titanesque"
+  description: "Un retard de 3 h 14 ou plus."
+  rarity: legendary
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: amoureux, motif: coeurs, coquille: or, decor: coeurs }
+- id: le-jour-le-plus-long
+  name: "Le Jour le plus long"
+  description: "4 h de retard cumulées dans la même journée."
+  rarity: legendary
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: blase, cou: medaille, coquille: nuit, decor: eclairs }
+- id: le-retard-de-l-orient-express
+  name: "Le Retard de l'Orient-Express"
+  description: "Un retard sur un train de nuit qui passe une frontière."
+  rarity: legendary
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: endormi, yeux: monocle, coquille: nuit, objet: valise, decor: lune }
+- id: transperceneige
+  name: "Transperceneige"
+  description: "Un retard un jour de neige sur un trajet de plus de 4 h."
+  rarity: legendary
+  category: cinema
+  rule: TODO
+  season: null
+  requires: [meteo]
+  recipe: { expression: blase, cou: echarpe, coquille: or, decor: neige }
+- id: les-miserables
+  name: "Les Misérables"
+  description: "3 retards d'une heure ou plus dans la même semaine."
+  rarity: legendary
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: blase, coquille: nuit, decor: pluie }
+- id: vingt-mille-lieues
+  name: "Vingt mille lieues"
+  description: "80 000 km parcourus au total."
+  rarity: legendary
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, yeux: rondes, motif: points, coquille: menthe, decor: etoiles }
+- id: la-quete-du-graal
+  name: "La Quête du Graal"
+  description: "Tous les titres d'une catégorie."
+  rarity: legendary
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: cape, coquille: or, objet: trophee }
+- id: le-bureau-des-legendes
+  name: "Le Bureau des légendes"
+  description: "10 titres légendaires débloqués."
+  rarity: legendary
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: blase, yeux: masque, cou: noeud, coquille: or, objet: valise }
+- id: 24-heures-chrono
+  name: "24 heures chrono"
+  description: "Des retards à chaque heure de la journée, de 5 h à 23 h, sur l'année."
+  rarity: legendary
+  category: cinema
+  rule: TODO
+  season: null
+  recipe: { expression: presse, coquille: nuit, decor: code }
+
+# --- Pop culture, musique, jeux et expressions ---
+- id: le-poinconneur-des-lilas
+  name: "Le Poinçonneur des Lilas"
+  description: "20 retards en RER ou Transilien le matin."
+  rarity: common
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: endormi, motif: etoiles, objet: cafe }
+- id: la-boheme
+  name: "La Bohème"
+  description: "10 retards sur des trains arrivés après 22 h."
+  rarity: common
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: rondes, cou: echarpe, objet: guitare, decor: lune }
+- id: paris-s-eveille
+  name: "Paris s'éveille"
+  description: "Un retard à Paris avant 6 h."
+  rarity: common
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: endormi, objet: cafe, decor: etoiles }
+- id: le-sud
+  name: "Le Sud"
+  description: "5 retards en Occitanie ou en Provence-Alpes-Côte d'Azur."
+  rarity: common
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, yeux: soleil, objet: guitare }
+- id: les-lacs-du-connemara
+  name: "Les Lacs du Connemara"
+  description: "Un retard de 30 min ou plus un samedi soir."
+  rarity: common
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, coquille: menthe, decor: notes }
+- id: derniere-danse
+  name: "Dernière danse"
+  description: "Un retard sur le dernier train de la journée."
+  rarity: common
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: amoureux, cou: noeud, decor: notes }
+- id: la-valse-a-mille-temps
+  name: "La Valse à mille temps"
+  description: "1 000 min de retard cumulées."
+  rarity: common
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: noeud, motif: points, decor: notes }
+- id: amsterdam
+  name: "Amsterdam"
+  description: "Un retard sur un train vers les Pays-Bas."
+  rarity: common
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: normal, cou: fleurs, objet: valise }
+- id: les-copains-d-abord
+  name: "Les Copains d'abord"
+  description: "3 amis ajoutés."
+  rarity: common
+  category: musique
+  rule: TODO
+  season: null
+  requires: [amis]
+  recipe: { expression: victoire, objet: guitare }
+- id: niveau-superieur
+  name: "Niveau supérieur"
+  description: "Passer un palier annuel."
+  rarity: common
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, motif: etoiles, objet: manette }
+- id: partie-sauvegardee
+  name: "Partie sauvegardée"
+  description: "Au moins un trajet enregistré 7 jours de suite."
+  rarity: common
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: normal, objet: manette }
+- id: respawn
+  name: "Respawn"
+  description: "Des retards dans la même gare 3 jours de suite."
+  rarity: common
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, objet: manette, decor: eclairs }
+- id: succes-debloque
+  name: "Succès débloqué"
+  description: "3 titres débloqués le même jour."
+  rarity: common
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: medaille, objet: manette, decor: confettis }
+- id: case-depart
+  name: "Case départ"
+  description: "Un trajet en janvier après avoir atteint un palier l'année précédente."
+  rarity: common
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: normal, yeux: rondes, motif: damier }
+- id: passe-ton-tour
+  name: "Passe ton tour"
+  description: "Un train supprimé un lundi."
+  rarity: common
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: blase, motif: damier, decor: zzz }
+- id: prendre-son-mal-en-patience
+  name: "Prendre son mal en patience"
+  description: "10 retards de 15 min ou plus."
+  rarity: common
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: blase, coquille: menthe, objet: cafe }
+- id: train-train-quotidien
+  name: "Train-train quotidien"
+  description: "20 trajets sur le même parcours dans le mois."
+  rarity: common
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: normal, objet: cafe, decor: zzz }
+- id: mener-grand-train
+  name: "Mener grand train"
+  description: "10 trajets en TGV dans le mois."
+  rarity: common
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, yeux: monocle, cou: noeud }
+- id: le-dernier-wagon
+  name: "Le Dernier Wagon"
+  description: "5 retards sur le dernier train du soir."
+  rarity: common
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: endormi, decor: lune }
+- id: ne-me-quitte-pas
+  name: "Ne me quitte pas"
+  description: "Un train supprimé moins de 15 min avant le départ."
+  rarity: rare
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: amoureux, decor: pluie }
+- id: douce-france
+  name: "Douce France"
+  description: "Des retards dans 6 régions la même année."
+  rarity: rare
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: echarpe, decor: notes }
+- id: mistral-gagnant
+  name: "Mistral gagnant"
+  description: "Un retard un jour de mistral."
+  rarity: rare
+  category: musique
+  rule: TODO
+  season: null
+  requires: [meteo]
+  recipe: { expression: surpris, cou: cape, coquille: menthe }
+- id: nationale-7
+  name: "Nationale 7"
+  description: "Un retard sur un trajet entre Paris et la Côte d'Azur."
+  rarity: rare
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, yeux: soleil, objet: valise }
+- id: alors-on-danse
+  name: "Alors on danse"
+  description: "Un retard entre 1 h et 5 h du matin."
+  rarity: rare
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: noeud, motif: points, coquille: violet, decor: notes }
+- id: formidable
+  name: "Formidable"
+  description: "Un retard d'une heure ou plus un lundi matin."
+  rarity: rare
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: blase, decor: pluie }
+- id: non-je-ne-regrette-rien
+  name: "Non, je ne regrette rien"
+  description: "Reprendre le train le lendemain d'un retard de 2 h ou plus."
+  rarity: rare
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: echarpe, motif: coeurs }
+- id: game-over
+  name: "Game over"
+  description: "Un train supprimé après plus de 30 min d'attente."
+  rarity: rare
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: blase, objet: manette, decor: code }
+- id: speedrun
+  name: "Speedrun"
+  description: "3 trajets en moins de 3 h, tous en retard."
+  rarity: rare
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: presse, motif: damier, objet: manette }
+- id: easter-egg
+  name: "Easter egg"
+  description: "Trouver le titre caché en touchant 7 fois la mascotte."
+  rarity: rare
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, motif: points, coquille: menthe, decor: confettis }
+- id: mode-difficile
+  name: "Mode difficile"
+  description: "10 retards de 30 min ou plus dans le mois."
+  rarity: rare
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: blase, coquille: nuit, objet: manette, decor: eclairs }
+- id: manquer-le-coche
+  name: "Manquer le coche"
+  description: "Une correspondance ratée de moins de 2 min."
+  rarity: rare
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: presse, yeux: monocle, objet: valise }
+- id: avoir-un-train-de-retard
+  name: "Avoir un train de retard"
+  description: "Un retard plus long que l'intervalle avec le train suivant de la ligne."
+  rarity: rare
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: endormi, yeux: rondes }
+- id: monter-dans-le-train-en-marche
+  name: "Monter dans le train en marche"
+  description: "Inscrit après le 1er juillet et Patient confirmé avant la fin de l'année."
+  rarity: rare
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: presse, cou: cape }
+- id: boss-final
+  name: "Boss final"
+  description: "Un pire retard de l'année de 2 h ou plus, débloqué le 31 décembre."
+  rarity: legendary
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: medaille, coquille: or, objet: trophee, decor: confettis }
+- id: echec-et-mat
+  name: "Échec et mat"
+  description: "Un train supprimé, puis le suivant supprimé aussi."
+  rarity: legendary
+  category: musique
+  rule: TODO
+  season: null
+  recipe: { expression: blase, motif: damier, coquille: or }
+
+# --- Collection ---
+- id: premier-titre
+  name: "Premier titre"
+  description: "Débloquer son premier titre."
+  rarity: common
+  category: collection
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, cou: medaille, motif: points, decor: confettis }
+- id: petite-collection
+  name: "Petite collection"
+  description: "10 titres débloqués."
+  rarity: common
+  category: collection
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: medaille, coquille: menthe, decor: confettis }
+- id: belle-collection
+  name: "Belle collection"
+  description: "50 titres débloqués."
+  rarity: common
+  category: collection
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: medaille, coquille: violet, decor: confettis }
+- id: trois-raretes
+  name: "Trois raretés"
+  description: "Un titre de chaque rareté."
+  rarity: common
+  category: collection
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: medaille, coquille: nuit, decor: confettis }
+- id: profil-complet
+  name: "Profil complet"
+  description: "Pseudo, avatar et lignes favorites renseignés."
+  rarity: common
+  category: collection
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, decor: confettis }
+- id: vitrine
+  name: "Vitrine"
+  description: "Choisir le titre affiché sur son profil."
+  rarity: common
+  category: collection
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: medaille, motif: etoiles, decor: confettis }
+- id: partageur
+  name: "Partageur"
+  description: "Partager un titre."
+  rarity: common
+  category: collection
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: medaille, motif: points, decor: confettis }
+- id: bilan-partage
+  name: "Bilan partagé"
+  description: "Partager son bilan annuel."
+  rarity: common
+  category: collection
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, coquille: menthe, decor: confettis }
+- id: saison-1
+  name: "Saison 1"
+  description: "Débloquer un titre ajouté après le lancement."
+  rarity: common
+  category: collection
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: medaille, motif: coeurs, decor: confettis }
+- id: curieux
+  name: "Curieux"
+  description: "Consulter 20 titres pas encore débloqués."
+  rarity: common
+  category: collection
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: medaille, motif: eclair, decor: confettis }
+- id: collection-express
+  name: "Collection express"
+  description: "5 titres débloqués la même semaine."
+  rarity: common
+  category: collection
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: medaille, motif: damier, decor: confettis }
+- id: retour-gagnant
+  name: "Retour gagnant"
+  description: "Débloquer un titre après 30 jours sans ouvrir l'appli."
+  rarity: common
+  category: collection
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, yeux: rondes, cou: medaille, decor: confettis }
+- id: mise-a-jour
+  name: "Mise à jour"
+  description: "Ouvrir l'appli le jour d'une nouvelle vague de titres."
+  rarity: common
+  category: collection
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, yeux: soleil, cou: medaille, decor: confettis }
+- id: grande-collection
+  name: "Grande collection"
+  description: "100 titres débloqués."
+  rarity: rare
+  category: collection
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, yeux: monocle, cou: medaille, decor: confettis }
+- id: musee-du-retard
+  name: "Musée du retard"
+  description: "200 titres débloqués."
+  rarity: rare
+  category: collection
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, yeux: 3d, cou: medaille, decor: confettis }
+- id: rare-collection
+  name: "Rare collection"
+  description: "10 titres rares."
+  rarity: rare
+  category: collection
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: medaille, motif: etoiles, coquille: violet, decor: confettis }
+- id: premiere-legende
+  name: "Première légende"
+  description: "Un premier titre légendaire."
+  rarity: rare
+  category: collection
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, cou: medaille, motif: points, coquille: violet, decor: confettis }
+- id: badges-au-complet
+  name: "Badges au complet"
+  description: "Les 6 badges de lancement."
+  rarity: rare
+  category: collection
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: medaille, motif: points, coquille: violet, decor: confettis }
+- id: collectionneur-saisonnier
+  name: "Collectionneur saisonnier"
+  description: "5 titres ajoutés après le lancement."
+  rarity: rare
+  category: collection
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: medaille, motif: coeurs, coquille: violet, decor: confettis }
+- id: jour-de-chance
+  name: "Jour de chance"
+  description: "2 titres rares le même jour."
+  rarity: rare
+  category: collection
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: medaille, motif: eclair, coquille: violet, decor: confettis }
+- id: encyclopedie
+  name: "Encyclopédie"
+  description: "300 titres débloqués."
+  rarity: legendary
+  category: collection
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: medaille, coquille: or, decor: confettis }
+- id: bibliotheque
+  name: "Bibliothèque"
+  description: "400 titres débloqués."
+  rarity: legendary
+  category: collection
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: medaille, motif: points, coquille: or, decor: confettis }
+- id: tout-vu-tout-vecu
+  name: "Tout vu, tout vécu"
+  description: "Les 500 titres du lancement."
+  rarity: legendary
+  category: collection
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: medaille, motif: etoiles, coquille: nuit, objet: trophee }
+- id: fan-de-la-premiere-heure
+  name: "Fan de la première heure"
+  description: "Inscrit dans le mois qui suit le lancement."
+  rarity: legendary
+  category: collection
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, coquille: nuit, decor: confettis }
+- id: beta-testeur
+  name: "Bêta-testeur"
+  description: "Avoir testé l'appli avant sa sortie."
+  rarity: legendary
+  category: collection
+  rule: TODO
+  season: null
+  recipe: { expression: surpris, yeux: rondes, coquille: or, objet: manette }
+
+# --- Classements et communauté, suite ---
+- id: dans-la-course
+  name: "Dans la course"
+  description: "Apparaître dans le classement de sa ligne."
+  rarity: common
+  category: communaute
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, yeux: rondes, cou: medaille }
+- id: top-50
+  name: "Top 50"
+  description: "Top 50 de sa ligne à la fin d'un mois."
+  rarity: common
+  category: communaute
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: medaille }
+- id: top-1-000-national
+  name: "Top 1 000 national"
+  description: "Top 1 000 en France à la fin d'un mois."
+  rarity: common
+  category: communaute
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: medaille, coquille: menthe }
+- id: fin-de-saison
+  name: "Fin de saison"
+  description: "Être classé sur sa ligne au 31 décembre."
+  rarity: common
+  category: communaute
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: echarpe, decor: neige }
+- id: voisin-de-quai
+  name: "Voisin de quai"
+  description: "Le même train en retard qu'un autre utilisateur."
+  rarity: common
+  category: communaute
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: medaille, coquille: violet }
+- id: esprit-d-equipe
+  name: "Esprit d'équipe"
+  description: "Un ami sur le même train en retard."
+  rarity: common
+  category: communaute
+  rule: TODO
+  season: null
+  requires: [amis]
+  recipe: { expression: victoire, cou: medaille, coquille: nuit }
+- id: recruteur
+  name: "Recruteur"
+  description: "Un ami invité qui enregistre un trajet."
+  rarity: common
+  category: communaute
+  rule: TODO
+  season: null
+  requires: [amis]
+  recipe: { expression: victoire, cou: medaille, motif: etoiles }
+- id: remontada
+  name: "Remontada"
+  description: "Gagner 10 places en une semaine."
+  rarity: rare
+  category: communaute
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: medaille, motif: points }
+- id: champion-regional
+  name: "Champion régional"
+  description: "Top 10 de sa région à la fin d'un mois."
+  rarity: rare
+  category: communaute
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: medaille, objet: valise }
+- id: train-bonde
+  name: "Train bondé"
+  description: "Le même train en retard que 50 utilisateurs."
+  rarity: rare
+  category: communaute
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: medaille, motif: coeurs }
+- id: coeur-de-la-communaute
+  name: "Cœur de la communauté"
+  description: "10 amis invités."
+  rarity: rare
+  category: communaute
+  rule: TODO
+  season: null
+  requires: [amis]
+  recipe: { expression: amoureux, cou: medaille, decor: coeurs }
+- id: porte-parole
+  name: "Porte-parole"
+  description: "25 partages."
+  rarity: rare
+  category: communaute
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: medaille, motif: damier, coquille: violet, decor: confettis }
+- id: numero-un
+  name: "Numéro un"
+  description: "1er de sa ligne à la fin d'un mois."
+  rarity: legendary
+  category: communaute
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: medaille, coquille: or }
+- id: abonne-au-podium
+  name: "Abonné au podium"
+  description: "Sur le podium de sa ligne 3 mois de suite."
+  rarity: legendary
+  category: communaute
+  rule: TODO
+  season: null
+  recipe: { expression: victoire, cou: medaille, motif: etoiles, coquille: or }

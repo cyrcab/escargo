@@ -14,6 +14,8 @@
     "@escargo/shared": "workspace:*"
   },
   "devDependencies": {
-    "vitest": "5.0.3"
+    "@types/node": "26.6.4",
+    "vitest": "5.0.3",
+    "yaml": "2.9.1"
   }
 }
