@@ -7,6 +7,8 @@
     "dev": "tsx watch --env-file-if-exists=../../.env src/main.ts",
     "gtfs:import": "tsx --env-file-if-exists=../../.env src/gtfs-import.cli.ts",
     "rt:coverage": "tsx --env-file-if-exists=../../.env src/rt-coverage.cli.ts",
+    "rt:capture": "tsx --env-file-if-exists=../../.env src/rt-capture.cli.ts",
+    "check-train": "tsx --env-file-if-exists=../../.env src/check-train.cli.ts",
     "build": "esbuild src/main.ts --bundle --platform=node --format=esm --target=node24 --packages=external --outfile=dist/main.js",
     "start": "node dist/main.js",
     "typecheck": "tsc --noEmit",
