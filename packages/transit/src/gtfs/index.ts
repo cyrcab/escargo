@@ -1,4 +1,6 @@
-export { iterateCsv, iterateLines, parseCsvLine } from './csv';
+export { CALENDAR_COLUMNS, type CalendarRow, expandCalendar } from './calendar';
+export { iterateCsv, iterateCsvAsync, iterateLines, iterateLinesAsync, parseCsvLine } from './csv';
+export { idfmRouteMode } from './idfm';
 export { modeFromStopId, stopKind } from './mode';
 export {
   type GtfsRoute,
@@ -15,6 +17,7 @@ export {
   type StopRow,
   type StopTimeRow,
   selectRailStops,
+  selectUsedStops,
   TRIP_COLUMNS,
   type TripRow,
   toRoute,
@@ -24,4 +27,5 @@ export {
   toTrip,
   trainNumberFromTripId,
 } from './parse';
+export { isImportDue, lastSlotBefore } from './schedule';
 export { formatGtfsTime, parseGtfsTime, serviceDaySeconds } from './time';

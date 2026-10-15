@@ -1,0 +1,5 @@
+route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_url,route_color,route_text_color,route_sort_order
+IDFM:C01624,IDFM:1080,4244,4244,,3,,82DC73,000000,
+IDFM:C01745,IDFM:93,TER,TER Bourgogne - Franche-Comté,,2,,AAAAAA,000000,
+IDFM:C01742,IDFM:71,A,A,,2,,EB2132,FFFFFF,
+IDFM:C01737,IDFM:1046,H,H,,2,,84653D,FFFFFF,

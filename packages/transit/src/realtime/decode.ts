@@ -1,3 +1,4 @@
+import type { DataSource } from '@escargo/shared';
 import GtfsRealtimeBindings from 'gtfs-realtime-bindings';
 
 const { FeedMessage } = GtfsRealtimeBindings.transit_realtime;
@@ -21,6 +22,8 @@ export interface TripRealtime {
   /** `YYYY-MM-DD` */
   serviceDate: string;
   status: TripStatus;
+  /** Flux temps réel d'où vient la lecture. */
+  source: DataSource;
   /** Horodatage de la mise à jour, secondes epoch. */
   updatedAt: number;
   stops: StopRealtime[];
@@ -82,6 +85,7 @@ export function decodeTripUpdates(bytes: Uint8Array): TripUpdatesFeed {
       tripId,
       serviceDate: `${startDate.slice(0, 4)}-${startDate.slice(4, 6)}-${startDate.slice(6, 8)}`,
       status,
+      source: 'SNCF_GTFS_RT',
       updatedAt: update.timestamp ?? timestamp,
       stops: (update.stopTimeUpdate ?? [])
         .filter((stop): stop is StopTimeUpdateObject & { stopId: string } => !!stop.stopId)

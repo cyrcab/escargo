@@ -1,0 +1,87 @@
+{
+  "Siri": {
+    "ServiceDelivery": {
+      "ResponseTimestamp": "2026-10-19T04:10:05.000Z",
+      "EstimatedTimetableDelivery": [
+        {
+          "EstimatedJourneyVersionFrame": [
+            {
+              "EstimatedVehicleJourney": [
+                {
+                  "RecordedAtTime": "2026-10-19T04:10:00.000Z",
+                  "LineRef": { "value": "STIF:Line::C01737:" },
+                  "DatedVehicleJourneyRef": {
+                    "value": "SNCF_ACCES_CLOUD:VehicleJourney::124303_20261019:LOC"
+                  },
+                  "TrainNumbers": { "TrainNumberRef": [{ "value": "124303" }] },
+                  "EstimatedCalls": {
+                    "EstimatedCall": [
+                      {
+                        "StopPointRef": { "value": "STIF:StopPoint:Q:41087:" },
+                        "AimedDepartureTime": "2026-10-19T03:56:30.000Z",
+                        "ExpectedDepartureTime": "2026-10-19T04:04:30.000Z",
+                        "DepartureStatus": "delayed"
+                      },
+                      {
+                        "StopPointRef": { "value": "STIF:StopPoint:Q:41234:" },
+                        "AimedArrivalTime": "2026-10-19T04:01:40.000Z",
+                        "ExpectedArrivalTime": "2026-10-19T04:09:40.000Z",
+                        "ArrivalStatus": "delayed",
+                        "AimedDepartureTime": "2026-10-19T04:02:30.000Z",
+                        "ExpectedDepartureTime": "2026-10-19T04:10:30.000Z",
+                        "DepartureStatus": "delayed"
+                      },
+                      {
+                        "StopPointRef": { "value": "STIF:StopPoint:Q:41300:" },
+                        "AimedArrivalTime": "2026-10-19T04:05:20.000Z",
+                        "ExpectedArrivalTime": "2026-10-19T04:13:20.000Z",
+                        "ArrivalStatus": "delayed"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "RecordedAtTime": "2026-10-19T04:09:00.000Z",
+                  "LineRef": { "value": "STIF:Line::C01742:" },
+                  "VehicleJourneyName": [{ "value": "TAXE79" }],
+                  "EstimatedCalls": {
+                    "EstimatedCall": [
+                      {
+                        "StopPointRef": { "value": "STIF:StopPoint:Q:470000:" },
+                        "AimedDepartureTime": "2026-10-19T18:51:54.000Z",
+                        "DepartureStatus": "cancelled"
+                      },
+                      {
+                        "StopPointRef": { "value": "STIF:StopPoint:Q:470001:" },
+                        "AimedArrivalTime": "2026-10-19T18:55:10.000Z",
+                        "ArrivalStatus": "cancelled"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "RecordedAtTime": "2026-10-19T04:10:00.000Z",
+                  "LineRef": { "value": "STIF:Line::C01742:" },
+                  "DatedVehicleJourneyRef": { "value": "RATP:VehicleJourney::RA.A.0612.1:LOC" },
+                  "EstimatedCalls": {
+                    "EstimatedCall": {
+                      "StopPointRef": { "value": "STIF:StopPoint:Q:473875:" },
+                      "AimedArrivalTime": "2026-10-19T04:12:00.000Z",
+                      "ExpectedArrivalTime": "2026-10-19T04:12:00.000Z",
+                      "ArrivalStatus": "onTime"
+                    }
+                  }
+                },
+                {
+                  "RecordedAtTime": "2026-10-19T04:10:00.000Z",
+                  "LineRef": { "value": "STIF:Line::C01624:" },
+                  "EstimatedCalls": { "EstimatedCall": [] }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -19,6 +19,7 @@ const read = (
   tripId: 'T1',
   serviceDate: '2026-10-13',
   status,
+  source: 'SNCF_GTFS_RT' as const,
   updatedAt,
   stops,
 });

@@ -45,6 +45,39 @@ export function* iterateLines(bytes: Uint8Array, chunkSize = 1 << 20): Generator
   if (rest.replace(/\r$/, '') !== '') yield rest.replace(/\r$/, '');
 }
 
+/** Même découpage que `iterateLines`, sur un flux de morceaux (fichier décompressé à la volée). */
+export async function* iterateLinesAsync(
+  chunks: AsyncIterable<Uint8Array>,
+): AsyncGenerator<string> {
+  const decoder = new TextDecoder('utf-8');
+  let rest = '';
+  for await (const chunk of chunks) {
+    rest += decoder.decode(chunk, { stream: true });
+    const lines = rest.split('\n');
+    rest = lines.pop() ?? '';
+    for (const line of lines) yield line.replace(/\r$/, '');
+  }
+  rest += decoder.decode();
+  if (rest.replace(/\r$/, '') !== '') yield rest.replace(/\r$/, '');
+}
+
+/** Associe les champs d'une ligne à leurs colonnes. Une colonne absente de l'en-tête vaut `''`. */
+function toRecord<C extends string>(
+  header: string[],
+  fields: string[],
+  columns: readonly C[],
+): Record<C, string> {
+  const record = {} as Record<C, string>;
+  for (const name of columns) {
+    const i = header.indexOf(name);
+    record[name] = i === -1 ? '' : (fields[i] ?? '');
+  }
+  return record;
+}
+
+const parseHeader = (line: string) =>
+  parseCsvLine(line).map((name) => name.replace(/^\uFEFF/, '').trim());
+
 /**
  * Enregistrements d'un fichier CSV avec en-tête, indexés par nom de colonne.
  * Une colonne absente de l'en-tête vaut `''`.
@@ -56,17 +89,20 @@ export function* iterateCsv<C extends string>(
   let header: string[] | undefined;
   for (const line of iterateLines(bytes)) {
     if (line === '') continue;
-    const fields = parseCsvLine(line);
-    if (!header) {
-      header = fields.map((name) => name.replace(/^﻿/, '').trim());
-      continue;
-    }
-    const index = header;
-    const record = {} as Record<C, string>;
-    for (const name of columns) {
-      const i = index.indexOf(name);
-      record[name] = i === -1 ? '' : (fields[i] ?? '');
-    }
-    yield record;
+    if (!header) header = parseHeader(line);
+    else yield toRecord(header, parseCsvLine(line), columns);
+  }
+}
+
+/** `iterateCsv` sur un flux de morceaux. */
+export async function* iterateCsvAsync<C extends string>(
+  chunks: AsyncIterable<Uint8Array>,
+  columns: readonly C[],
+): AsyncGenerator<Record<C, string>> {
+  let header: string[] | undefined;
+  for await (const line of iterateLinesAsync(chunks)) {
+    if (line === '') continue;
+    if (!header) header = parseHeader(line);
+    else yield toRecord(header, parseCsvLine(line), columns);
   }
 }

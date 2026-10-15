@@ -15,7 +15,13 @@ export const ROUTE_COLUMNS = [
   'route_long_name',
   'route_type',
 ] as const;
-export const TRIP_COLUMNS = ['route_id', 'service_id', 'trip_id', 'trip_headsign'] as const;
+export const TRIP_COLUMNS = [
+  'route_id',
+  'service_id',
+  'trip_id',
+  'trip_headsign',
+  'trip_short_name',
+] as const;
 export const STOP_TIME_COLUMNS = [
   'trip_id',
   'arrival_time',
@@ -52,7 +58,10 @@ export interface GtfsTrip {
   id: string;
   routeId: string;
   serviceId: string;
-  /** Numéro commercial du train (870302), lu dans le trip_id SNCF. */
+  /**
+   * Numéro du train : `trip_short_name` quand le GTFS le donne (IDFM : 124303, ou TAXE79
+   * sur le RER), sinon lu dans le trip_id SNCF (870302).
+   */
   trainNumber: string | null;
   headsign: string | null;
 }
@@ -95,7 +104,7 @@ export function toTrip(row: TripRow): GtfsTrip {
     id: row.trip_id,
     routeId: row.route_id,
     serviceId: row.service_id,
-    trainNumber: trainNumberFromTripId(row.trip_id),
+    trainNumber: row.trip_short_name || trainNumberFromTripId(row.trip_id),
     headsign: row.trip_headsign || null,
   };
 }
@@ -125,4 +134,12 @@ export function selectRailStops(stops: GtfsStop[]): GtfsStop[] {
   const railPoints = stops.filter((s) => !s.isStation && modeFromStopId(s.id) !== null);
   const stations = new Set(railPoints.map((s) => s.parentId));
   return stops.filter((s) => (s.isStation ? stations.has(s.id) : modeFromStopId(s.id) !== null));
+}
+
+/** Garde les points d'arrêt desservis par les trains retenus, et les gares qui les regroupent. */
+export function selectUsedStops(stops: GtfsStop[], usedStopIds: ReadonlySet<string>): GtfsStop[] {
+  const stations = new Set(
+    stops.filter((s) => !s.isStation && usedStopIds.has(s.id)).map((s) => s.parentId),
+  );
+  return stops.filter((s) => (s.isStation ? stations.has(s.id) : usedStopIds.has(s.id)));
 }

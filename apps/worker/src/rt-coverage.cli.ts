@@ -1,5 +1,5 @@
 // Couverture temps réel d'une journée : part des trains prévus (GTFS) vus dans le flux
-// GTFS-RT, par mode et par ligne. N'a de sens que si le worker a tourné ce jour-là.
+// GTFS-RT SNCF ou PRIM, par mode et par ligne. N'a de sens que si le worker a tourné ce jour-là.
 // pnpm --filter @escargo/worker rt:coverage [YYYY-MM-DD]
 import { createDb } from '@escargo/db';
 import { computeCoverage, pollsKey, seenKey, serviceDaySeconds } from '@escargo/transit';
@@ -24,8 +24,8 @@ if (!polls.first || !polls.last) {
   const trips = await db.execute<{ id: string; mode: string; line: string; lineName: string }>(sql`
     select t.id, t.mode, r.short_name as line, r.long_name as "lineName"
     from gtfs_trips t
-    join gtfs_service_dates d on d.service_id = t.service_id and d.date = ${date}
-    join gtfs_routes r on r.id = t.route_id
+    join gtfs_service_dates d on d.feed = t.feed and d.service_id = t.service_id and d.date = ${date}
+    join gtfs_routes r on r.feed = t.feed and r.id = t.route_id
     join lateral (
       select min(departure_seconds) as departure from gtfs_stop_times where trip_id = t.id
     ) st on true

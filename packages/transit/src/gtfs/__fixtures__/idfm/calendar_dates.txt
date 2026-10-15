@@ -1,0 +1,2 @@
+service_id,date,exception_type
+IDFM:TN:0022f58d-1161-31b5-b866-4ff4712fe4fc,20261111,2

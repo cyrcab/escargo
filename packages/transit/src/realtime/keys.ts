@@ -14,3 +14,9 @@ export const FEED_KEY = 'rt:feed';
 
 /** Couvre un train qui roule après minuit et le temps de valider le trajet ensuite. */
 export const TRIP_TTL_SECONDS = 48 * 3600;
+
+/** Hash : horodatage et compteurs du dernier relevé PRIM (Île-de-France). */
+export const PRIM_FEED_KEY = 'rt:feed:prim';
+
+/** Compteur des appels PRIM d'un jour (heure de Paris), pour tenir le quota journalier. */
+export const primCallsKey = (date: string) => `prim:calls:${date}`;

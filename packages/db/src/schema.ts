@@ -16,6 +16,7 @@ export const authProvider = pgEnum('auth_provider', ['apple', 'google']);
 export const rarity = pgEnum('rarity', ['common', 'rare', 'legendary']);
 export const trainMode = pgEnum('train_mode', ['TER', 'INTERCITES', 'TGV', 'TRANSILIEN', 'RER']);
 export const dataSource = pgEnum('data_source', ['SNCF_GTFS_RT', 'PRIM', 'NAVITIA', 'MANUAL']);
+export const gtfsFeed = pgEnum('gtfs_feed', ['SNCF', 'IDFM']);
 
 // Données stockées : pseudo, identifiant Apple/Google, trajets. Rien d'autre.
 export const users = pgTable('users', {
@@ -73,23 +74,27 @@ export const userTitles = pgTable(
   (t) => [primaryKey({ columns: [t.userId, t.titleId] })],
 );
 
-// Horaires théoriques (GTFS) : données publiques, remplacées en bloc à chaque import.
-// Pas de clés étrangères : l'import vide puis recharge tout dans une transaction.
+// Horaires théoriques (GTFS) : données publiques, une source par flux (`feed`),
+// remplacée en bloc à chaque import de ce flux.
+// Pas de clés étrangères : l'import vide puis recharge un flux dans une transaction.
+// Les identifiants ne se chevauchent pas entre flux : ceux d'IDFM commencent tous par `IDFM:`.
 export const gtfsStops = pgTable(
   'gtfs_stops',
   {
     id: text().primaryKey(),
+    feed: gtfsFeed().notNull(),
     name: text().notNull(),
     lat: doublePrecision().notNull(),
     lon: doublePrecision().notNull(),
     parentId: text(),
     isStation: boolean().notNull(),
   },
-  (t) => [index().on(t.parentId)],
+  (t) => [index().on(t.parentId), index().on(t.feed)],
 );
 
 export const gtfsRoutes = pgTable('gtfs_routes', {
   id: text().primaryKey(),
+  feed: gtfsFeed().notNull(),
   shortName: text().notNull(),
   longName: text().notNull(),
 });
@@ -98,19 +103,21 @@ export const gtfsTrips = pgTable(
   'gtfs_trips',
   {
     id: text().primaryKey(),
+    feed: gtfsFeed().notNull(),
     routeId: text().notNull(),
     serviceId: text().notNull(),
     trainNumber: text(),
     headsign: text(),
     mode: trainMode().notNull(),
   },
-  (t) => [index().on(t.serviceId), index().on(t.trainNumber)],
+  (t) => [index().on(t.feed, t.serviceId), index().on(t.trainNumber)],
 );
 
 // Heures en secondes depuis minuit du jour de service (peuvent dépasser 24 h).
 export const gtfsStopTimes = pgTable(
   'gtfs_stop_times',
   {
+    feed: gtfsFeed().notNull(),
     tripId: text().notNull(),
     stopSequence: integer().notNull(),
     stopId: text().notNull(),
@@ -120,26 +127,33 @@ export const gtfsStopTimes = pgTable(
   (t) => [
     primaryKey({ columns: [t.tripId, t.stopSequence] }),
     index().on(t.stopId, t.departureSeconds),
+    index().on(t.feed),
   ],
 );
 
 export const gtfsServiceDates = pgTable(
   'gtfs_service_dates',
   {
+    feed: gtfsFeed().notNull(),
     serviceId: text().notNull(),
     date: date().notNull(),
   },
   (t) => [primaryKey({ columns: [t.serviceId, t.date] }), index().on(t.date)],
 );
 
-export const gtfsImports = pgTable('gtfs_imports', {
-  id: uuid().primaryKey().defaultRandom(),
-  source: text().notNull(),
-  feedHash: text().notNull(),
-  feedVersion: text(),
-  stops: integer().notNull(),
-  trips: integer().notNull(),
-  stopTimes: integer().notNull(),
-  importedAt: timestamp({ withTimezone: true }).notNull().defaultNow(),
-  checkedAt: timestamp({ withTimezone: true }).notNull().defaultNow(),
-});
+export const gtfsImports = pgTable(
+  'gtfs_imports',
+  {
+    id: uuid().primaryKey().defaultRandom(),
+    feed: gtfsFeed().notNull(),
+    source: text().notNull(),
+    feedHash: text().notNull(),
+    feedVersion: text(),
+    stops: integer().notNull(),
+    trips: integer().notNull(),
+    stopTimes: integer().notNull(),
+    importedAt: timestamp({ withTimezone: true }).notNull().defaultNow(),
+    checkedAt: timestamp({ withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index().on(t.feed, t.checkedAt)],
+);
