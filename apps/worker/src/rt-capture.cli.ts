@@ -1,7 +1,8 @@
 // Capture d'une journée de la ligne test pour les fixtures de @escargo/transit : horaires
 // prévus et dernière lecture temps réel de chaque train. À lancer chaque soir où le worker
 // a tourné (le cache garde un train 48 h). Données publiques de trains seulement.
-// pnpm --filter @escargo/worker rt:capture [YYYY-MM-DD] [lignes, défaut C6,C16]
+// pnpm --filter @escargo/worker rt:capture [YYYY-MM-DD] [lignes, défaut C6,C16] [gare, défaut Colomiers]
+// Plusieurs régions ont une ligne C6 : seuls les trains qui desservent la gare sont gardés.
 import { mkdir, writeFile } from 'node:fs/promises';
 import { createDb } from '@escargo/db';
 import { Redis } from 'ioredis';
@@ -11,6 +12,7 @@ import { findScheduledTrains, readCachedTrips } from './train-lookup';
 const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Paris' }).format(new Date());
 const date = process.argv[2] ?? today;
 const lines = (process.argv[3] ?? 'C6,C16').split(',');
+const via = process.argv[4] ?? 'Colomiers';
 const outDir = new URL('../../../packages/transit/src/__fixtures__/ligne-test/', import.meta.url);
 
 const db = createDb(env.DATABASE_URL);
@@ -18,7 +20,7 @@ const redis = new Redis(env.REDIS_URL);
 
 await mkdir(outDir, { recursive: true });
 for (const line of lines) {
-  const trains = await findScheduledTrains(db, date, { line });
+  const trains = await findScheduledTrains(db, date, { line, via });
   const realtime = await readCachedTrips(
     redis,
     date,

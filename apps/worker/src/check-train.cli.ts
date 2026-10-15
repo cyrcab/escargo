@@ -84,7 +84,7 @@ if (trains.length === 0) {
     );
     console.log(`trip_id ${scheduled.tripId}`);
     console.log(
-      `Cache : ${fromCache ? `oui (${fromCache.source}, lu à ${hhmm(fromCache.updatedAt)})` : 'non'}` +
+      `Cache : ${fromCache ? `oui (${fromCache.source}, mis à jour par la source à ${hhmm(fromCache.updatedAt)})` : 'non'}` +
         ` · Flux en direct : ${live === null ? 'indisponible' : fromLive ? 'oui' : 'absent'}` +
         ` · Statut : ${realtime?.status ?? 'inconnu'}`,
     );
@@ -92,7 +92,7 @@ if (trains.length === 0) {
     // Train suivant de la ligne, au cas où celui-ci est supprimé.
     const lineTrains =
       realtime?.status === 'cancelled' || realtime?.stops.some((s) => s.skipped)
-        ? await findScheduledTrains(db, date, { line: scheduled.line })
+        ? await findScheduledTrains(db, date, { routeId: scheduled.routeId })
         : [];
     const lineRealtime = await readCachedTrips(
       redis,

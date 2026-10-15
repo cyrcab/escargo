@@ -14,25 +14,37 @@ export interface ScheduledTrain {
   tripId: string;
   trainNumber: string | null;
   mode: string;
+  routeId: string;
   line: string;
   lineName: string;
   stops: ScheduledStop[];
 }
 
+export type TrainFilter =
+  | { train: string }
+  | { routeId: string }
+  /** Nom court de ligne (C6…) : partagé par plusieurs régions, d'où la gare desservie `via`. */
+  | { line: string; via: string };
+
 /** Trains du GTFS qui roulent le jour de service `date`, filtrés par trip_id, numéro ou ligne. */
 export async function findScheduledTrains(
   db: Db,
   date: string,
-  filter: { train: string } | { line: string },
+  filter: TrainFilter,
 ): Promise<ScheduledTrain[]> {
   const where =
     'train' in filter
       ? sql`(t.id = ${filter.train} or t.train_number = ${filter.train})`
-      : sql`r.short_name = ${filter.line}`;
+      : 'routeId' in filter
+        ? sql`t.route_id = ${filter.routeId}`
+        : sql`r.short_name = ${filter.line} and exists (
+            select 1 from gtfs_stop_times vst join gtfs_stops vs on vs.id = vst.stop_id
+            where vst.trip_id = t.id and vs.name = ${filter.via})`;
   const rows = await db.execute<{
     tripId: string;
     trainNumber: string | null;
     mode: string;
+    routeId: string;
     line: string;
     lineName: string;
     stopId: string;
@@ -40,7 +52,7 @@ export async function findScheduledTrains(
     arrivalSeconds: number;
     departureSeconds: number;
   }>(sql`
-    select t.id as "tripId", t.train_number as "trainNumber", t.mode,
+    select t.id as "tripId", t.train_number as "trainNumber", t.mode, t.route_id as "routeId",
       r.short_name as line, r.long_name as "lineName",
       st.stop_id as "stopId", s.name as "stopName",
       st.arrival_seconds as "arrivalSeconds", st.departure_seconds as "departureSeconds"
