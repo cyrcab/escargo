@@ -7,7 +7,7 @@
     "dev": "tsx watch --env-file-if-exists=../../.env src/main.ts",
     "gtfs:import": "tsx --env-file-if-exists=../../.env src/gtfs-import.cli.ts",
     "rt:coverage": "tsx --env-file-if-exists=../../.env src/rt-coverage.cli.ts",
-    "build": "esbuild src/main.ts --bundle --platform=node --format=esm --target=node24 --packages=external --outfile=dist/main.js",
+    "build": "node ../../infra/esbuild.mjs src/main.ts src/migrate.cli.ts src/gtfs-import.cli.ts src/rt-coverage.cli.ts",
     "start": "node dist/main.js",
     "typecheck": "tsc --noEmit",
     "test": "vitest run --passWithNoTests"

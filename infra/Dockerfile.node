@@ -1,15 +1,28 @@
 # Image commune api / worker. Build : docker build -f infra/Dockerfile.node --build-arg APP=api .
-FROM node:24-alpine AS build
+# La commande de chaque service est dans infra/docker-compose.prod.yml.
+FROM node:24-alpine AS base
 ARG APP
 RUN corepack enable
+ENV CI=true
 WORKDIR /repo
 COPY . .
-RUN pnpm install --frozen-lockfile --filter "@escargo/${APP}..." && pnpm --filter "@escargo/${APP}" build
+
+# Bundle esbuild : les paquets @escargo/* (TypeScript source) y entrent.
+FROM base AS build
+RUN pnpm install --frozen-lockfile --filter "@escargo/${APP}..." \
+  && pnpm --filter "@escargo/${APP}" build
+
+# Dépendances npm de prod de l'app seule. `pnpm install --filter` ne suffit pas : avec
+# nodeLinker hoisted, il installe tout le workspace (appli mobile comprise).
+FROM base AS deps
+RUN pnpm --filter "@escargo/${APP}" deploy --prod --legacy /out
 
 FROM node:24-alpine
 ARG APP
+ENV NODE_ENV=production MIGRATIONS_DIR=/app/migrations DATA_DIR=/data
 WORKDIR /app
-COPY --from=build /repo/node_modules ./node_modules
+COPY --from=deps /out/node_modules ./node_modules
 COPY --from=build /repo/apps/${APP}/dist ./dist
+COPY --from=build /repo/packages/db/migrations ./migrations
+RUN mkdir /data && chown node:node /data
 USER node
-CMD ["sh", "-c", "node dist/*.js"]

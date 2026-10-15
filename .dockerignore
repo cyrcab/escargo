@@ -1,6 +1,18 @@
+# Contexte de build des images api / worker : sources seulement.
 **/node_modules
 **/dist
 **/.expo
+**/.turbo
+**/coverage
+**/*.tsbuildinfo
 .git
 .env
-apps/mobile
+.env.*
+data
+backups
+apps/mobile/*
+!apps/mobile/package.json
+docs
+content
+**/__fixtures__
+**/*.test.ts
