@@ -1,0 +1,134 @@
+# Prod sur un VPS (ADR 0004). Depuis la racine du repo sur le serveur :
+#   docker compose -f infra/docker-compose.prod.yml --env-file .env.prod up -d --build
+# Variables : voir infra/README.md. Postgres et Redis ne sont joignables que par les services.
+name: escargo-prod
+
+x-logging: &logging
+  # Logs Docker plafonnés (~30 Mo par service) : rien ne s'accumule sans limite.
+  driver: json-file
+  options: { max-size: 10m, max-file: '3' }
+
+x-db-env: &db-env
+  DATABASE_URL: postgres://escargo:${POSTGRES_PASSWORD:?}@postgres:5432/escargo
+  REDIS_URL: redis://redis:6379
+
+# Chaque service ne reçoit que ses variables : pas de clé PRIM dans l'API, par exemple.
+x-node: &node
+  restart: unless-stopped
+  logging: *logging
+  environment: *db-env
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    logging: *logging
+    environment:
+      POSTGRES_USER: escargo
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?}
+      POSTGRES_DB: escargo
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U escargo']
+      interval: 5s
+      retries: 10
+
+  redis:
+    image: redis:8-alpine
+    restart: unless-stopped
+    logging: *logging
+    # Le cache temps réel (48 h) survit à un redémarrage.
+    command: ['redis-server', '--appendonly', 'yes']
+    volumes: [redisdata:/data]
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 5s
+      retries: 10
+
+  migrate:
+    <<: *node
+    build: { context: .., dockerfile: infra/Dockerfile.node, args: { APP: worker } }
+    image: escargo-worker
+    restart: 'no'
+    command: ['node', 'dist/migrate.cli.js']
+    depends_on:
+      postgres: { condition: service_healthy }
+
+  worker:
+    <<: *node
+    image: escargo-worker
+    command: ['node', 'dist/main.js']
+    environment:
+      <<: *db-env
+      SNCF_GTFS_URL: ${SNCF_GTFS_URL:?}
+      SNCF_GTFS_RT_URL: ${SNCF_GTFS_RT_URL:?}
+      PRIM_API_KEY: ${PRIM_API_KEY:-}
+    volumes: [gtfsdata:/data]
+    depends_on:
+      migrate: { condition: service_completed_successfully }
+      redis: { condition: service_healthy }
+
+  api:
+    <<: *node
+    build: { context: .., dockerfile: infra/Dockerfile.node, args: { APP: api } }
+    image: escargo-api
+    command: ['node', 'dist/server.js']
+    depends_on:
+      migrate: { condition: service_completed_successfully }
+      redis: { condition: service_healthy }
+    healthcheck:
+      test: ['CMD', 'wget', '-qO-', 'http://127.0.0.1:3000/health']
+      interval: 30s
+      retries: 3
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    logging: *logging
+    ports: ['80:80', '443:443', '443:443/udp']
+    environment:
+      # Sans domaine : `:80`, HTTP seul, à ne pas utiliser avec de vrais utilisateurs.
+      API_DOMAIN: ${API_DOMAIN:-:80}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddydata:/data
+      - caddyconfig:/config
+    depends_on:
+      api: { condition: service_healthy }
+
+  backup:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    logging: *logging
+    environment:
+      PGHOST: postgres
+      PGUSER: escargo
+      PGPASSWORD: ${POSTGRES_PASSWORD:?}
+      PGDATABASE: escargo
+    # Une sauvegarde par jour, 7 jours gardés, dans BACKUP_DIR (défaut /var/backups/escargo).
+    entrypoint:
+      - sh
+      - -c
+      - |
+        umask 077
+        while true; do
+          file=/backups/escargo-$$(date +%F).dump
+          # Purge seulement après un dump réussi : une panne ne vide pas les sauvegardes.
+          if pg_dump --format=custom --file="$$file.tmp" && mv "$$file.tmp" "$$file"; then
+            echo "[backup] $$file"
+            find /backups -name 'escargo-*.dump' -mtime +7 -delete
+          else
+            echo '[backup] échec'
+          fi
+          sleep 86400
+        done
+    volumes: ['${BACKUP_DIR:-/var/backups/escargo}:/backups']
+    depends_on:
+      postgres: { condition: service_healthy }
+
+volumes:
+  pgdata:
+  redisdata:
+  gtfsdata:
+  caddydata:
+  caddyconfig:
