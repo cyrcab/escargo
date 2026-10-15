@@ -1,0 +1,6 @@
+# Reverse proxy de l'API. Avec un domaine, Caddy obtient et renouvelle le certificat TLS seul.
+# Pas de directive `log` : aucun journal d'accès (adresses IP) côté proxy.
+{$API_DOMAIN} {
+	encode zstd gzip
+	reverse_proxy api:3000
+}
